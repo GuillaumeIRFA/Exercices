@@ -1,0 +1,25 @@
+/* Feuille de styles CSS */
+
+h1
+{
+    color: red;
+    font-size: 3em;
+}
+
+figure
+{
+    text-align: center;
+}
+
+ul
+{
+    border: 1px solid black;
+    box-shadow: 2px 2px 0px black;
+    width: fit-content;
+    padding-right: 10px;
+}
+
+a:hover
+{
+    font-weight: bold;
+}
