@@ -1,5 +1,5 @@
 let diviseur, premier;
-for (let nombre = 0; nombre <= 100; nombre++) {
+for (let nombre = 1; nombre <= 100; nombre++) {
     diviseur = 1, premier = 0;
     do {
         if (nombre % diviseur == 0) {
