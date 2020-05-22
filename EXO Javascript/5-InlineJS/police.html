@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changement de police</title>
+</head>
+
+<body>
+    <section style="font-size: 2rem; width: 100%; line-height: 2rem;">
+        <h1>Nous voici sur l'exercice "Changement de police"</h1>
+        <p style="font-family: sans-serif;" onmouseover="
+            this.style.fontFamily='Verdana'; 
+            this.style.textDecoration='line-through'; 
+            this.style.fontSize='3rem';
+            this.style.lineHeight='4rem';
+            //this.style.fontSize=(parseFloat(this.style.fontSize)/16)*1.5+'rem'; 
+            //this.style.lineHeight=(parseFloat(this.style.lineHeight)/16)*2+'rem'; 
+            this.style.textTransform='capitalize';" onmouseout="
+            this.style.fontFamily='sans-serif'; 
+            this.style.textDecoration='none'; 
+            this.style.fontSize='2rem';
+            this.style.lineHeight='2rem';
+            //this.style.fontSize=(parseFloat(this.style.lineHeight)/16)*2/3+'rem'; 
+            //this.style.lineHeight=(parseFloat(this.style.lineHeight)/16)*0.5+'rem'; 
+            this.style.textTransform='none';">
+            Je vais complètement me modifier!
+        </p>
+        <p>Au passage de votre souris!</p>
+    </section>
+</body>
+
+</html>

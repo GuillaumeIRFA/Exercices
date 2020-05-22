@@ -4,7 +4,6 @@ let prenoms = [],
 
 while (proceed) {
     prenom = prompt("Entrez un prénom : ");
-    console.log(prenom);
     if (prenom) {
         prenoms.push(prenom);
     } else {
@@ -12,12 +11,8 @@ while (proceed) {
     }
 }
 
-if (prenoms) {
-    let prenomString = prenoms.join(" ");
-    // for (let i = 0; i < prenoms.length; i++) {
-    // affichagePrenoms += prenoms[i] + " ";
-    // }
-    alert(prenomString);
+if (prenoms.length > 0) {
+    alert(prenom.join(" "));
 } else {
     alert("Il n'y a aucun prénoms!");
 }
