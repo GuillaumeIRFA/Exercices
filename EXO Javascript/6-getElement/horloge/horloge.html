@@ -107,126 +107,119 @@
             minutes = 0,
             go;
 
-        // function stop() {
-        // go = false;
-        // }
-
         function tourne() {
-            minutes == 5 ? (compteur_minutes++, minutes = 0) : null;
-            compteur_minutes == 12 ? (compteur_heures++, compteur_minutes = 0) : null;
-            compteur_heures == 12 ? compteur_heures = 0 : null;
+            if (go) {
+                minutes == 5 ? (compteur_minutes++, minutes = 0) : null;
+                compteur_minutes == 12 ? (compteur_heures++, compteur_minutes = 0) : null;
+                compteur_heures == 12 ? compteur_heures = 0 : null;
 
-            switch (compteur_minutes) {
-                case 0:
-                    document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre12')).top) + 10) + "px";
-                    document.getElementById('aiguilleminute').style.left = getComputedStyle(document.getElementById('chiffre12')).left;
-                    break;
-                case 1:
-                    document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre1')).top) + 10) + "px";
-                    document.getElementById('aiguilleminute').style.left = getComputedStyle(document.getElementById('chiffre1')).left;
-                    break;
-                case 2:
-                    document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre2')).top) + 10) + "px";
-                    document.getElementById('aiguilleminute').style.left = getComputedStyle(document.getElementById('chiffre2')).left;
-                    break;
-                case 3:
-                    document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre3')).top) + 10) + "px";
-                    document.getElementById('aiguilleminute').style.left = getComputedStyle(document.getElementById('chiffre3')).left;
-                    break;
-                case 4:
-                    document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre4')).top) + 10) + "px";
-                    document.getElementById('aiguilleminute').style.left = getComputedStyle(document.getElementById('chiffre4')).left;
-                    break;
-                case 5:
-                    document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre5')).top) + 10) + "px";
-                    document.getElementById('aiguilleminute').style.left = getComputedStyle(document.getElementById('chiffre5')).left;
-                    break;
-                case 6:
-                    document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre6')).top) + 10) + "px";
-                    document.getElementById('aiguilleminute').style.left = getComputedStyle(document.getElementById('chiffre6')).left;
-                    break;
-                case 7:
-                    document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre7')).top) + 10) + "px";
-                    document.getElementById('aiguilleminute').style.left = getComputedStyle(document.getElementById('chiffre7')).left;
-                    break;
-                case 8:
-                    document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre8')).top) + 10) + "px";
-                    document.getElementById('aiguilleminute').style.left = getComputedStyle(document.getElementById('chiffre8')).left;
-                    break;
-                case 9:
-                    document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre9')).top) + 10) + "px";
-                    document.getElementById('aiguilleminute').style.left = getComputedStyle(document.getElementById('chiffre9')).left;
-                    break;
-                case 10:
-                    document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre10')).top) + 10) + "px";
-                    document.getElementById('aiguilleminute').style.left = getComputedStyle(document.getElementById('chiffre10')).left;
-                    break;
-                case 11:
-                    document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre11')).top) + 10) + "px";
-                    document.getElementById('aiguilleminute').style.left = getComputedStyle(document.getElementById('chiffre11')).left;
-                    break;
-            }
-
-            if (compteur_minutes == 0) {
-                switch (compteur_heures) {
+                switch (compteur_minutes) {
                     case 0:
-                        document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre12')).top) + 10) + "px";
-                        document.getElementById('aiguilleheure').style.left = getComputedStyle(document.getElementById('chiffre12')).left;
+                        document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre12')).top) + 12) + "px";
+                        document.getElementById('aiguilleminute').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre12')).left) - 4) + "px";
                         break;
                     case 1:
-                        document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre1')).top) + 10) + "px";
-                        document.getElementById('aiguilleheure').style.left = getComputedStyle(document.getElementById('chiffre1')).left;
+                        document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre1')).top) + 12) + "px";
+                        document.getElementById('aiguilleminute').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre1')).left) - 4) + "px";
                         break;
                     case 2:
-                        document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre2')).top) + 10) + "px";
-                        document.getElementById('aiguilleheure').style.left = getComputedStyle(document.getElementById('chiffre2')).left;
+                        document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre2')).top) + 12) + "px";
+                        document.getElementById('aiguilleminute').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre2')).left) - 4) + "px";
                         break;
                     case 3:
-                        document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre3')).top) + 10) + "px";
-                        document.getElementById('aiguilleheure').style.left = getComputedStyle(document.getElementById('chiffre3')).left;
+                        document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre3')).top) + 12) + "px";
+                        document.getElementById('aiguilleminute').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre3')).left) - 4) + "px";
                         break;
                     case 4:
-                        document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre4')).top) + 10) + "px";
-                        document.getElementById('aiguilleheure').style.left = getComputedStyle(document.getElementById('chiffre4')).left;
+                        document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre4')).top) + 12) + "px";
+                        document.getElementById('aiguilleminute').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre4')).left) - 4) + "px";
                         break;
                     case 5:
-                        document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre5')).top) + 10) + "px";
-                        document.getElementById('aiguilleheure').style.left = getComputedStyle(document.getElementById('chiffre5')).left;
+                        document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre5')).top) + 12) + "px";
+                        document.getElementById('aiguilleminute').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre5')).left) - 4) + "px";
                         break;
                     case 6:
-                        document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre6')).top) + 10) + "px";
-                        document.getElementById('aiguilleheure').style.left = getComputedStyle(document.getElementById('chiffre6')).left;
+                        document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre6')).top) + 12) + "px";
+                        document.getElementById('aiguilleminute').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre6')).left) - 4) + "px";
                         break;
                     case 7:
-                        document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre7')).top) + 10) + "px";
-                        document.getElementById('aiguilleheure').style.left = getComputedStyle(document.getElementById('chiffre7')).left;
+                        document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre7')).top) + 12) + "px";
+                        document.getElementById('aiguilleminute').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre7')).left) - 4) + "px";
                         break;
                     case 8:
-                        document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre8')).top) + 10) + "px";
-                        document.getElementById('aiguilleheure').style.left = getComputedStyle(document.getElementById('chiffre8')).left;
+                        document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre8')).top) + 12) + "px";
+                        document.getElementById('aiguilleminute').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre8')).left) - 4) + "px";
                         break;
                     case 9:
-                        document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre9')).top) + 10) + "px";
-                        document.getElementById('aiguilleheure').style.left = getComputedStyle(document.getElementById('chiffre9')).left;
+                        document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre9')).top) + 12) + "px";
+                        document.getElementById('aiguilleminute').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre9')).left) - 4) + "px";
                         break;
                     case 10:
-                        document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre10')).top) + 10) + "px";
-                        document.getElementById('aiguilleheure').style.left = getComputedStyle(document.getElementById('chiffre10')).left;
+                        document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre10')).top) + 12) + "px";
+                        document.getElementById('aiguilleminute').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre10')).left) - 4) + "px";
                         break;
                     case 11:
-                        document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre11')).top) + 10) + "px";
-                        document.getElementById('aiguilleheure').style.left = getComputedStyle(document.getElementById('chiffre11')).left;
+                        document.getElementById('aiguilleminute').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre11')).top) + 12) + "px";
+                        document.getElementById('aiguilleminute').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre11')).left) - 4) + "px";
                         break;
-
                 }
-            }
 
-            // minutes++;
-            minutes += 5;
-            if (go) {
-                setTimeout(function() {
-                    tourne()
-                }, 500);
+                if (compteur_minutes == 0) {
+                    switch (compteur_heures) {
+                        case 0:
+                            document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre12')).top) + 12) + "px";
+                            document.getElementById('aiguilleheure').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre12')).left) - 4) + "px";
+                            break;
+                        case 1:
+                            document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre1')).top) + 12) + "px";
+                            document.getElementById('aiguilleheure').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre1')).left) - 4) + "px";
+                            break;
+                        case 2:
+                            document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre2')).top) + 12) + "px";
+                            document.getElementById('aiguilleheure').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre2')).left) - 4) + "px";
+                            break;
+                        case 3:
+                            document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre3')).top) + 12) + "px";
+                            document.getElementById('aiguilleheure').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre3')).left) - 4) + "px";
+                            break;
+                        case 4:
+                            document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre4')).top) + 12) + "px";
+                            document.getElementById('aiguilleheure').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre4')).left) - 4) + "px";
+                            break;
+                        case 5:
+                            document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre5')).top) + 12) + "px";
+                            document.getElementById('aiguilleheure').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre5')).left) - 4) + "px";
+                            break;
+                        case 6:
+                            document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre6')).top) + 12) + "px";
+                            document.getElementById('aiguilleheure').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre6')).left) - 4) + "px";
+                            break;
+                        case 7:
+                            document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre7')).top) + 12) + "px";
+                            document.getElementById('aiguilleheure').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre7')).left) - 4) + "px";
+                            break;
+                        case 8:
+                            document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre8')).top) + 12) + "px";
+                            document.getElementById('aiguilleheure').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre8')).left) - 4) + "px";
+                            break;
+                        case 9:
+                            document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre9')).top) + 12) + "px";
+                            document.getElementById('aiguilleheure').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre9')).left) - 4) + "px";
+                            break;
+                        case 10:
+                            document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre10')).top) + 12) + "px";
+                            document.getElementById('aiguilleheure').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre10')).left) - 4) + "px";
+                            break;
+                        case 11:
+                            document.getElementById('aiguilleheure').style.top = (parseInt(getComputedStyle(document.getElementById('chiffre11')).top) + 12) + "px";
+                            document.getElementById('aiguilleheure').style.left = (parseInt(getComputedStyle(document.getElementById('chiffre11')).left) - 4) + "px";
+                            break;
+
+                    }
+                }
+                // minutes++;
+                minutes += 5;
+                setTimeout(tourne, 1000);
             }
         }
     </script>
