@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Exercice sur getElementById</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        function modif_paragraphe(id) {
+            let paragraphe = document.getElementById(id);
+            paragraphe.innerHTML = 'Premier paragraphe <i>corrigé</i>';
+        }
+
+        function centrage_h1() {
+            let titresh1 = document.getElementsByTagName('h1');
+            titresh1[0].setAttribute("align", "center");
+        }
+    </script>
+</head>
+
+<body>
+    <h1 onclick="modif_paragraphe('premier')" title="Quand on clique, modif du paragraphe">Grand titre</h1>
+    <p id="premier" onclick=centrage_h1() title="Quand on clique, centrage du titre">Premier paragraphe original.</p>
+</body>
+
+</html>

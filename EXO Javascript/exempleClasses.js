@@ -3,7 +3,6 @@ class Personnage {
         this.arme = new Arme(arme);
         this.armure = new Armure(armure);
     }
-
 }
 
 class Arme {
