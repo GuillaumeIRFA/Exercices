@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Gestion d'évènement avec les propriétés des objets éléments</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <script type="text/javascript">
+        function Init() {
+            document.getElementById("soumet").setAttribute("onclick", "soumission()");
+            document.getElementById("raz").setAttribute("onclick", "remise_a_zero()");
+        }
+
+        function soumission() {
+            alert(document.getElementById("champsaisie").value);
+        }
+
+        function remise_a_zero() {
+            alert("Remise à zéro du champ de saisie!");
+            document.getElementById("champsaisie").value = "Mot quelconque";
+        }
+    </script>
+</head>
+
+<body onload="Init()">
+    <form action="" id="formulaire">
+        <input type="text" value="Mot quelconque" id="champsaisie">
+        <input type="button" id="soumet" value="Soumettre">
+        <input type="button" id="raz" value="Remise à zéro">
+    </form>
+    <script type="text/javascript">
+        console.log(document.getElementById("soumet"));
+        console.log(document.getElementById("raz"));
+    </script>
+</body>
+
+</html>
