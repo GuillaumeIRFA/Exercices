@@ -24,26 +24,46 @@
     <canvas id="monCanvas" width="480" height="320"></canvas>
 
     <script type="text/javascript">
-        var canvas = document.getElementById("monCanvas");
-        var context = canvas.getContext("2d");
+        let canvas = document.getElementById("monCanvas");
+        let context = canvas.getContext("2d");
 
-        var posX = canvas.width / 2;
-        var posY = canvas.height - 30;
+        let posX = canvas.width / 2;
+        let posY = canvas.height - 60;
+        let ballRadius = 10;
 
-        var dx = 2;
-        var dy = -2;
+        let dx = 2;
+        let dy = -2;
 
-        var ballRadius = 10;
+        let paddleHeight = 10;
+        let paddleWidth = 80;
+        let paddleYOffset = 40;
+        let paddleX = (canvas.width - paddleWidth) / 2;
+        let paddleY = canvas.height - paddleHeight - paddleYOffset;
 
-        var paddleHeight = 10;
-        var paddleWidth = 75;
-        var paddleX = (canvas.width - paddleWidth) / 2;
-        var paddleY = canvas.height - paddleHeight;
+        let rightPressed = false;
+        let leftPressed = false;
 
-        var rightPressed = false;
-        var leftPressed = false;
-        console.log(rightPressed);
-        console.log(leftPressed);
+        let briqueLigne = 3;
+        let briqueColonne = 5;
+        let briqueWidth = 80;
+        let briqueHeight = 20;
+        let briquePadding = 10;
+        let briqueOffsetTop = 30;
+        let briqueOffsetLeft = 30;
+
+        let briques = [];
+        for (let c; c < briqueColonne; c++) {
+            briques[c] = [];
+            for (let r; r < briqueLigne; r++) {
+                briques[c][r] = {
+                    x: 0,
+                    y: 0
+                };
+            }
+        }
+
+        document.addEventListener("keydown", keyDownHandler, false);
+        document.addEventListener("keyup", keyUpHandler, false);
 
         function drawBall() {
             context.beginPath();
@@ -65,25 +85,44 @@
             context.clearRect(0, 0, canvas.width, canvas.height);
             drawBall();
             drawPaddle();
-            if (posY + dy < 0 + ballRadius || posY + dy > canvas.height - ballRadius) {
+
+            // Si la balle touche paddle
+            if (posY + dy > canvas.height - paddleHeight - paddleYOffset - ballRadius &&
+                posY + dy < canvas.height - paddleYOffset - ballRadius &&
+                posX >= paddleX &&
+                posX <= paddleX + paddleWidth) {
+                dy = -2;
+            }
+
+            // Si la balle touche top
+            if (posY + dy < 0 + ballRadius) {
                 dy = -dy;
             }
+
+            // Si la balle touche bottom
+            if (posY + dy > canvas.height - ballRadius) {
+                alert("GAME OVER LOSER MDRXD");
+                document.location.reload(true);
+            }
+
+            // Si la balle touche left/right
             if (posX + dx < 0 + ballRadius || posX + dx > canvas.width - ballRadius) {
                 dx = -dx;
             }
-            posX += dx;
-            posY += dy;
 
-            if (rightPressed == true && !(paddleX + 10 > canvas.width - paddleWidth)) {
+            // Si -> et qu'on est pas totalement à droite
+            if (rightPressed && (paddleX + 10 <= canvas.width - paddleWidth)) {
                 paddleX += 10;
             }
-            if (leftPressed == true && !(paddleX - 10 < 0)) {
+
+            // Si <- et qu'on est pas totalement à gauche
+            if (leftPressed && (paddleX - 10 >= 0)) {
                 paddleX -= 10;
             }
-        }
 
-        document.addEventListener("keydown", keyDownHandler, false);
-        document.addEventListener("keyup", keyUpHandler, false);
+            posX += dx;
+            posY += dy;
+        }
 
         function keyDownHandler(e) {
             if (e.key == "ArrowRight") {
