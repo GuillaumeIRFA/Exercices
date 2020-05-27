@@ -110,13 +110,13 @@
                 dx = -dx;
             }
 
-            // Si -> et qu'on est pas totalement à droite
-            if (rightPressed && (paddleX + 10 <= canvas.width - paddleWidth)) {
+            // Si -> et ! totalement à droite
+            if (rightPressed && paddleX + 10 <= canvas.width - paddleWidth) {
                 paddleX += 10;
             }
 
-            // Si <- et qu'on est pas totalement à gauche
-            if (leftPressed && (paddleX - 10 >= 0)) {
+            // Si <- et ! totalement à gauche
+            if (leftPressed && paddleX - 10 >= 0) {
                 paddleX -= 10;
             }
 
