@@ -6,6 +6,7 @@
     <title>Gestion d'évènement avec les propriétés des objets éléments</title>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
     <script type="text/javascript">
         function Init() {
             document.getElementById("soumet").setAttribute("onclick", "soumission()");
@@ -18,7 +19,8 @@
 
         function remise_a_zero() {
             alert("Remise à zéro du champ de saisie!");
-            document.getElementById("champsaisie").value = "Mot quelconque";
+            saisie = document.getElementById("champsaisie");
+            saisie.value = saisie.getAttribute("value");
         }
     </script>
 </head>
@@ -31,7 +33,7 @@
     </form>
     <script type="text/javascript">
         console.log(document.getElementById("soumet"));
-        console.log(document.getElementById("raz"));
+        //
     </script>
 </body>
 

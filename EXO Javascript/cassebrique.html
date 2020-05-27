@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casse Brique</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        canvas {
+            background: #0F0F0F;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="monCanvas" width="480" height="320"></canvas>
+
+    <script type="text/javascript">
+        var canvas = document.getElementById("monCanvas");
+        var context = canvas.getContext("2d");
+
+        var posX = canvas.width / 2;
+        var posY = canvas.height - 30;
+
+        var dx = 2;
+        var dy = -2;
+
+        var ballRadius = 10;
+
+        var paddleHeight = 10;
+        var paddleWidth = 75;
+        var paddleX = (canvas.width - paddleWidth) / 2;
+        var paddleY = canvas.height - paddleHeight;
+
+        var rightPressed = false;
+        var leftPressed = false;
+        console.log(rightPressed);
+        console.log(leftPressed);
+
+        function drawBall() {
+            context.beginPath();
+            context.arc(posX, posY, 10, 0, Math.PI * 2);
+            context.fillStyle = "#ed151b";
+            context.fill();
+            context.closePath();
+        }
+
+        function drawPaddle() {
+            context.beginPath();
+            context.rect(paddleX, paddleY, paddleWidth, paddleHeight);
+            context.fillStyle = "#ed151b"
+            context.fill();
+            context.closePath();
+        }
+
+        function draw() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            drawBall();
+            drawPaddle();
+            if (posY + dy < 0 + ballRadius || posY + dy > canvas.height - ballRadius) {
+                dy = -dy;
+            }
+            if (posX + dx < 0 + ballRadius || posX + dx > canvas.width - ballRadius) {
+                dx = -dx;
+            }
+            posX += dx;
+            posY += dy;
+
+            if (rightPressed == true && !(paddleX + 10 > canvas.width - paddleWidth)) {
+                paddleX += 10;
+            }
+            if (leftPressed == true && !(paddleX - 10 < 0)) {
+                paddleX -= 10;
+            }
+        }
+
+        document.addEventListener("keydown", keyDownHandler, false);
+        document.addEventListener("keyup", keyUpHandler, false);
+
+        function keyDownHandler(e) {
+            if (e.key == "ArrowRight") {
+                rightPressed = true;
+            } else if (e.key == "ArrowLeft") {
+                leftPressed = true;
+            }
+        }
+
+        function keyUpHandler(e) {
+            if (e.key == "ArrowRight") {
+                rightPressed = false;
+            } else if (e.key == "ArrowLeft") {
+                leftPressed = false;
+            }
+        }
+
+        setInterval(draw, 10);
+    </script>
+</body>
+
+</html>
