@@ -51,19 +51,64 @@
         let briqueOffsetTop = 30;
         let briqueOffsetLeft = 30;
 
+        let score = 0;
+        let victoire = briqueLigne * briqueColonne;
+
         let briques = [];
-        for (let c; c < briqueColonne; c++) {
+        for (let c = 0; c < briqueColonne; c++) {
             briques[c] = [];
-            for (let r; r < briqueLigne; r++) {
+            for (let r = 0; r < briqueLigne; r++) {
                 briques[c][r] = {
                     x: 0,
-                    y: 0
+                    y: 0,
+                    status: 1
                 };
             }
         }
 
         document.addEventListener("keydown", keyDownHandler, false);
         document.addEventListener("keyup", keyUpHandler, false);
+
+        function drawBricks() {
+            for (let c = 0; c < briqueColonne; c++) {
+                for (let r = 0; r < briqueLigne; r++) {
+                    if (briques[c][r].status == 1) {
+                        let briqueX = (c * (briqueWidth + briquePadding)) + briqueOffsetLeft;
+                        let briqueY = (r * (briqueHeight + briquePadding)) + briqueOffsetTop;
+                        briques[c][r].x = briqueX;
+                        briques[c][r].y = briqueY;
+                        context.beginPath();
+                        context.rect(briqueX, briqueY, briqueWidth, briqueHeight);
+                        context.fillStyle = "#0095DD";
+                        context.fill();
+                        context.closePath();
+                    }
+                }
+            }
+        }
+
+        function collisionDetection() {
+            for (let c = 0; c < briqueColonne; c++) {
+                for (let r = 0; r < briqueLigne; r++) {
+                    let b = briques[c][r];
+                    if (b.status == 1) {
+                        if (posX > b.x && posX < b.x + briqueWidth && posY > b.y + ballRadius && posY < b.y + briqueHeight + ballRadius) {
+                            dy = -dy;
+                            b.status = 0;
+                            score++;
+                        }
+                    }
+                }
+            }
+        }
+
+        function drawScore() {
+            context.beginPath();
+            context.font = "16px Arial";
+            context.fillStyle = "#FFFFFF";
+            context.fillText("Score : " + score, 8, 20);
+            context.closePath();
+        }
 
         function drawBall() {
             context.beginPath();
@@ -85,6 +130,16 @@
             context.clearRect(0, 0, canvas.width, canvas.height);
             drawBall();
             drawPaddle();
+            drawBricks();
+            collisionDetection();
+            drawScore();
+
+            // Conditions de victoire
+            if (score == victoire) {
+                alert("Bravo! Vous avez réussi! Pog :clap:");
+                document.location.reload();
+                clearInterval(interval);
+            }
 
             // Si la balle touche paddle
             if (posY + dy > canvas.height - paddleHeight - paddleYOffset - ballRadius &&
@@ -99,7 +154,7 @@
                 dy = -dy;
             }
 
-            // Si la balle touche bottom
+            // Si la balle touche bottom - GAME OVER
             if (posY + dy > canvas.height - ballRadius) {
                 alert("GAME OVER LOSER MDRXD");
                 document.location.reload(true);
