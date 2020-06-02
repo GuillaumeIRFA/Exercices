@@ -30,7 +30,7 @@
         let posX = canvas.width / 2;
         let posY = canvas.height - 60;
         let ballRadius = 10;
-        let ballColor = "#ed151b";
+        let ballColor = "#EE1122";
         let c1, c2, c3;
 
         let dx = 2;
@@ -46,13 +46,13 @@
         let rightPressed = false;
         let leftPressed = false;
 
-        let briqueLigne = 4;
-        let briqueColonne = 6;
-        let briqueWidth = 80;
-        let briqueHeight = 20;
-        let briquePadding = 10;
         let briqueOffsetTop = 30;
         let briqueOffsetLeft = 30;
+        let briqueLigne = 6;
+        let briqueColonne = 6;
+        let briquePadding = 8;
+        let briqueHeight = (canvas.height / 2.5 - briqueOffsetTop - briquePadding * (briqueLigne - 1)) / briqueLigne;
+        let briqueWidth = (canvas.width - 2 * briqueOffsetLeft - briquePadding * (briqueColonne - 1)) / briqueColonne;
 
         let score = 0;
         let victoire = briqueLigne * briqueColonne;
@@ -84,7 +84,7 @@
                         briques[c][r].y = briqueY;
                         context.beginPath();
                         context.rect(briqueX, briqueY, briqueWidth, briqueHeight);
-                        context.fillStyle = "#0095DD";
+                        context.fillStyle = "#00AADD";
                         context.fill();
                         context.closePath();
                     }
@@ -141,7 +141,7 @@
         function drawPaddle() {
             context.beginPath();
             context.rect(paddleX, paddleY, paddleWidth, paddleHeight);
-            context.fillStyle = "#ed151b"
+            context.fillStyle = "#EE1122"
             context.fill();
             context.closePath();
         }
