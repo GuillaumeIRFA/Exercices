@@ -24,7 +24,7 @@
                 this.pronom = "Iel";
             }
             this.bioSimple = function() {
-                return "Nom: " + this.nom.nom + ", prénom: " + this.nom.prenom + ", " + this.age + " ans, genre : " + this.sexe + ", " + this.prenom + ", " + this.article + ".";
+                return "Nom: " + this.nom.nom + ", prénom: " + this.nom.prenom + ", " + this.age + " ans, genre : " + this.sexe + ", " + this.pronom + ", " + this.article + ".";
             };
         }
 
@@ -63,6 +63,8 @@
 
         alert(meyer.bio());
         alert(frederic.bio());
+        alert(meyer.bioSimple());
+        alert(frederic.bioSimple());
     </script>
 </head>
 
