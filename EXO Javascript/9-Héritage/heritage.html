@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Héritage</title>
+    <script type="text/javascript">
+        function Personne(nom, prenom, age, sexe) {
+            this.nom = {
+                prenom,
+                nom
+            };
+            this.age = age;
+            this.sexe = sexe;
+            if (this.sexe === "M") {
+                this.article = "M";
+                this.pronom = "Il";
+            } else if (this.sexe === "F") {
+                this.article = "Mme";
+                this.pronom = "Elle";
+            } else {
+                this.article = "Mde";
+                this.pronom = "Iel";
+            }
+            this.bioSimple = function() {
+                return "Nom: " + this.nom.nom + ", prénom: " + this.nom.prenom + ", " + this.age + " ans, genre : " + this.sexe + ", " + this.prenom + ", " + this.article + ".";
+            };
+        }
+
+        function Professeur(nom, prenom, age, sexe, anciennete, matiere) {
+            Personne.call(this, nom, prenom, age, sexe);
+            this.anciennete = anciennete;
+            this.matiere = matiere;
+            this.classe = [];
+            this.bio = function() {
+                return this.article + " " + this.nom.nom + " " + this.nom.prenom + " est professeur de " + matiere + " depuis " + anciennete + " ans, " + this.pronom + " a pour élèves les classes de " + this.classe.join(", ") + ".";
+            }
+            this.attributionClasse = function(classe) {
+                this.classe.push(classe);
+            }
+        }
+
+        Professeur.prototype = Object.create(Personne.prototype);
+
+        function Etudiant(nom, prenom, age, sexe, classe, annee, profPrincipal) {
+            Personne.call(this, nom, prenom, age, sexe);
+            this.classe = classe;
+            this.annee = annee;
+            this.profPrincipal = profPrincipal;
+            this.bio = function() {
+                return this.article + " " + this.nom.nom + " " + this.nom.prenom + " est en " + annee + " année de classe " + classe + ". Son professeur pricipal est " + profPrincipal.article + " " + profPrincipal.nom.nom + " " + profPrincipal.nom.prenom + ".";
+            }
+        }
+
+        Etudiant.prototype = Object.create(Personne.prototype);
+
+        let meyer = new Professeur("Meyer", "Fabrice", 43, "N/B", 7, "Français");
+        let frederic = new Etudiant("Untel", "Frédéric", 18, "M", "BTS IRIS", "1ère", meyer);
+
+        meyer.attributionClasse("BTS IRIS");
+        meyer.attributionClasse("BTS COMPTA");
+
+        alert(meyer.bio());
+        alert(frederic.bio());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

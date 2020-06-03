@@ -17,11 +17,13 @@
             this.loisirs = loisirs;
             this.sexe == "M" || this.sexe == "m" ? this.pronom = "Il" : this.pronom = "Elle";
             this.bio = function() {
-                this.allLoisirs = '';
-                for (let i = 0; i < this.loisirs.length; i++) {
-                    i + 1 < this.loisirs.length ? this.allLoisirs += loisirs[i] + ' et ' : this.allLoisirs += loisirs[i] + '.';
-                }
-                alert(this.nom.prenom + ' ' + this.nom.nom + ' a ' + this.age + ' ans. ' + this.pronom + ' aime ' + this.allLoisirs);
+                // this.allLoisirs = '';
+                // for (let i = 0; i < this.loisirs.length; i++) {
+                //     i + 1 < this.loisirs.length ? this.allLoisirs += loisirs[i] + ', ' : this.allLoisirs += ' et ' + loisirs[i] + '.';
+                // }
+                // alert(this.nom.prenom + ' ' + this.nom.nom + ' a ' + this.age + ' ans. ' + this.pronom + ' aime ' + this.allLoisirs);
+                alert(this.nom.prenom + ' ' + this.nom.nom + ' a ' + this.age + ' ans. ' + this.pronom + ' aime ' + this.loisirs.join(" et ") + '.');
+
             }
         }
 
@@ -42,7 +44,7 @@
         let guillaume = new Object({
             prenom: "Guillaume",
             nom: "Baumgartner",
-            age: 35,
+            age: 30,
             bonjour: function() {
                 alert("Hello les boys! Je m'appelle " + this.prenom + " " + this.nom + ".");
             }
