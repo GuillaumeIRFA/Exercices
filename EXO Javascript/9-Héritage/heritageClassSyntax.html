@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        class Personne {
+            constructor(nom, prenom, age, sexe) {
+                this.nom = {
+                    nom,
+                    prenom
+                };
+                this.age = age;
+                this.sexe = sexe;
+                if (this.sexe === "M") {
+                    this.article = "M";
+                    this.pronom = "Il";
+                } else if (this.sexe === "F") {
+                    this.article = "Mme";
+                    this.pronom = "Elle";
+                } else {
+                    this.article = "Mde";
+                    this.pronom = "Iel";
+                }
+            }
+            bioSimple = function() {
+                return `Nom:  ${this.nom.nom} \nPrénom:  ${this.nom.prenom} \n${this.age} ans \nGenre : ${this.sexe}, ${this.pronom}, ${this.article}.`;
+            };
+        }
+
+        class Professeur extends Personne {
+            constructor(nom, prenom, age, sexe, anciennete, matiere) {
+                super(nom, prenom, age, sexe);
+                this.anciennete = anciennete;
+                this.matiere = matiere;
+                this.classe = [];
+            }
+            bio = function() {
+                return `${this.article} ${this.nom.nom} ${this.nom.prenom} est professeur de ${this.matiere} depuis ${this.anciennete} ans, ${this.pronom} a pour élèves les classes de ${this.classe.join(", ")}.`;
+            }
+            attributionClasse = function(classe) {
+                this.classe.push(classe);
+            }
+        }
+
+        class Etudiant extends Personne {
+            constructor(nom, prenom, age, sexe, classe, annee, profPrincipal) {
+                super(nom, prenom, age, sexe);
+                this.classe = classe;
+                this.annee = annee;
+                this.profPrincipal = profPrincipal;
+            }
+            bio = function() {
+                return `${this.article} ${this.nom.nom} ${this.nom.prenom} est en ${this.annee} année de classe ${this.classe}. Son professeur pricipal est ${this.profPrincipal.article} ${this.profPrincipal.nom.nom} ${this.profPrincipal.nom.prenom}.`;
+            }
+        }
+
+        let meyer = new Professeur("Meyer", "Fabrice", 43, "N/B", 7, "Français");
+        let frederic = new Etudiant("Untel", "Frédéric", 18, "M", "BTS IRIS", "1ère", meyer);
+
+        meyer.attributionClasse("BTS IRIS");
+        meyer.attributionClasse("BTS COMPTA");
+
+        alert(meyer.bio());
+        alert(frederic.bio());
+        alert(meyer.bioSimple());
+        alert(frederic.bioSimple());
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
