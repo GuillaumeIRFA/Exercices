@@ -17,7 +17,6 @@ $(document).ready(function() {
                     $(`#reponse${index+1}`).css({ color: "red" });
                     $(`#img${index+1}`).attr("src", "./mauvais.png");
                 }
-
             });
             $(".reponse").toggleClass("hidden");
         },
@@ -26,5 +25,4 @@ $(document).ready(function() {
             $(".reponse").toggleClass("hidden");
         }
     )
-
 });
