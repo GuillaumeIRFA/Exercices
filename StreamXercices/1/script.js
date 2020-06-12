@@ -9,12 +9,14 @@ while (true) {
     } else if (choice == 1) {
         compteur++;
         alert(`Le choix 1 a été saisi ${compteur} fois`)
-    } else {
+    } else if (choice == 2) {
         tableauNoms.push(prompt("Veuillez entrer le nom d'un personnage célèbre!"));
         let affichageNoms = '';
         for (let i = 0; i < tableauNoms.length; i++) {
             affichageNoms += `${i+1} : ${tableauNoms[i]} \n`;
         }
         alert(affichageNoms);
+    } else {
+        alert("Choix invalide");
     }
 }
