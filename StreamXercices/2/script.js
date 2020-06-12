@@ -21,9 +21,9 @@ while (true) {
         }
 
         let message = ''
-        for (key in itemsTable) {
+        Object.keys(itemsTable).forEach(function(key) {
             message += `${key} : ${itemsTable[key]} unité(es) \n`
-        }
+        });
 
         alert(message);
         console.log(itemSet, itemsTable);
