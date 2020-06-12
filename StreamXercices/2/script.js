@@ -8,7 +8,9 @@ while (true) {
 
     let item = prompt("A quel objet pensez vous?");
     let itemQuantity = parseInt(prompt("Quelle est la quantité de cet objet?"));
+
     if (item && itemQuantity) {
+
         if (item in itemsTable == false) {
             itemsTable[item] = itemQuantity;
         } else {
@@ -19,6 +21,7 @@ while (true) {
         for (key in itemsTable) {
             message += `${key} : ${itemsTable[key]} unité(es) \n`
         }
+
         alert(message);
 
     } else break;
