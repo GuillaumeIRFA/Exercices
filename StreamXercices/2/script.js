@@ -3,6 +3,8 @@ let itemsTable = {
     "Pierre": 2,
 };
 
+let itemSet = new Set();
+itemSet.add("Sceau").add("Pierre");
 
 while (true) {
 
@@ -11,7 +13,8 @@ while (true) {
 
     if (item && itemQuantity) {
 
-        if (item in itemsTable == false) {
+        if (!itemSet.has(item)) {
+            itemSet.add(item);
             itemsTable[item] = itemQuantity;
         } else {
             itemsTable[item] += itemQuantity;
@@ -23,6 +26,7 @@ while (true) {
         }
 
         alert(message);
+        console.log(itemSet, itemsTable);
 
     } else break;
 }
