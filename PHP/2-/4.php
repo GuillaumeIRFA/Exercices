@@ -8,20 +8,22 @@
 <body>
     <h1>Titre Principal</h1>
     <?php
+
         $x = 10;
         echo "La valeur de \$x globale est : ", $x, "<br>";
-        function add5($number) {
-            $number += 5;
-            return $number;
+        function foo() {
+            global $x;
+            $x += 5;
         }
-        $x = add5($x);
+        foo();
         echo "\$x contient maintenant : ", $x, "<br>";
 
         /* OU ALORS TOUT SIMPLEMENT*/
         // $x += 5;
         // echo "\$x contient maintenant : ", $x, "<br>";
 
-        echo "<p>Un paragraphe</p>"
+
+        echo "<p>Un paragraphe</p>";
     ?>
 
 </body>

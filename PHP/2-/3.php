@@ -19,11 +19,15 @@
 
         $y = 1;
         echo "\$y contient la valeur : ", $y, "<br>";
-        echo "\$y contient la valeur : ", $y, "<br>";
+        function sayY() {
+            global $y;
+            echo "\$y contient la valeur : ", $y, "<br>";
+        }
+        sayY();
 
         function sayZ() {
             $z = '';
-            return $z;
+            // return $z;
         }
         echo "La variable locale \$z contient : ", sayZ(), "<br>";
 
