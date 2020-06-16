@@ -10,6 +10,11 @@
         echo "Version de PHP éxecuté sur le serveur: ", phpversion();
         echo "<br>";
         echo "Système d'exploitation du serveur: ", PHP_OS;
+        echo "<br>";
+        echo "Version OS serveur extended", php_uname();
+        echo "<br>";
+        echo phpinfo();
+        echo "<br>";
     ?>
 </body>
 </html>
