@@ -14,7 +14,7 @@
         echo $$message."<br>";
         echo $test."<br>";
 
-        echo "<br>La différence entre \$message et \$\$message est que \$\$message utilise le contenu de \$message pour créer une variable dynamique, ainsi, si \$message vaut 'test', alors \$\$message revient à écrire \$test, c'est un alias crée dynamiquement et les deux noms de cette variable partagent la même valeur en mémoire.";
+        echo "<br>La différence entre \$message et \$\$message est que \$\$message utilise le contenu de \$message pour créer une variable dynamique, ainsi, si \$message vaut 'test', alors \$\$message revient à écrire \$test, c'est un alias crée dynamiquement.";
     ?>
 </body>
 </html>
