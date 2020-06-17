@@ -11,3 +11,7 @@ if (age >= 0 && age < 12) {
 } else {
     alert('?Kewa?');
 }
+
+variable1 = "anus";
+variable2 = "joel:)";
+alert(`${variable1} ${variable2}`)
