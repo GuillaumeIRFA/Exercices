@@ -83,7 +83,7 @@
 
             echo "<div id='container'>";
             echo "<p>Bonjour ".$civ." <strong>".implode($identite, " ")."</strong>, j'espère que vous allez bien!</p><br>";
-            echo "<p>Vous êtes ".$article." fin".$suffixe." connaisseur! Je vous que vous aimé le ".implode($vins, " ainsi que le ").(count($vins) > 1 ? ". Ce sont de très bons vins!" : ". C'est un très bon vin!");
+            echo "<p>Vous êtes ".$article." fin".$suffixe." connaisseur! Je vois que vous aimé le ".implode($vins, " ainsi que le ").(count($vins) > 1 ? ". Ce sont de très bons vins!" : ". C'est un très bon vin!");
             echo "<img src='./5Head.png'><img src='wine_glass.png'>";
             echo "</div>";
         }
