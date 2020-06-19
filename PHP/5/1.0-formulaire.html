@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1.0 - Formulaire HTML</title>
+    <style>
+        form {
+            width: fit-content;
+            margin: auto;
+        }
+        
+        h3 {
+            margin: auto;
+            text-align: center;
+        }
+        
+        input[type="submit"] {
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="1.1-traitement.php" method="GET">
+        <h3>Nom : </h3>
+        <input type="text" name="nom" placeholder="Nom :"><br>
+        <input type="text" name="prenom" placeholder="Prénom :">
+        <hr>
+        <h3>Sexe : </h3>
+        <input type="radio" name="sexe" id="H" value="H">
+        <label for="H">Homme</label><br>
+        <input type="radio" name="sexe" id="F" value="F">
+        <label for="F">Femme</label>
+        <hr>
+        <h3>Vins : </h3>
+        <input type="checkbox" name="vins[]" id="vin1" value="bordeaux">
+        <label for="bordeaux">Bordeaux</label><br>
+        <input type="checkbox" name="vins[]" id="vin2" value="beaujolais">
+        <label for="beaujolais">Beaujolais</label><br>
+        <input type="checkbox" name="vins[]" id="vin3" value="loire">
+        <label for="loire">Loire</label>
+        <hr>
+        <input type="submit" name="valider" value="Valider">
+    </form>
+</body>
+
+</html>

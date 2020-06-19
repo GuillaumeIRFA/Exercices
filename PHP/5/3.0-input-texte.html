@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 3.0 - Input texte</title>
+    <style>
+        form {
+            width: fit-content;
+            margin: auto;
+        }
+        
+        input[type="submit"] {
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="3.1-traitement-texte.php" method="GET">
+        <label for="champtexte">Veuillez saisir votre texte : </label><br>
+        <textarea name="texte" rows="7" cols="30" placeholder="Votre texte :"></textarea>
+        <hr>
+        <input type="submit" name="valider" value="traitement">
+    </form>
+</body>
+
+</html>
