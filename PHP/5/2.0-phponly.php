@@ -40,27 +40,29 @@
 <body style="background:<?php echo empty($_GET) ? "#FFFFFF" : "#EEEEEE"; ?>">
     <?php   
         if (empty($_GET)) {
-            echo '<form action="2.0-phponly.php" method="GET">';
-            echo '<h3>Nom : </h3>';
-            echo '<input type="text" name="nom" placeholder="Nom :"><br>';
-            echo '<input type="text" name="prenom" placeholder="Prénom :">';
-            echo '<hr>';
-            echo '<h3>Sexe : </h3>';
-            echo '<input type="radio" name="sexe" id="H" value="H">';
-            echo '<label for="H">Homme</label><br>';
-            echo '<input type="radio" name="sexe" id="F" value="F">';
-            echo '<label for="F">Femme</label>';
-            echo '<hr>';
-            echo '<h3>Vins : </h3>';
-            echo '<input type="checkbox" name="vins[]" id="vin1" value="bordeaux">';
-            echo '<label for="bordeaux">Bordeaux</label><br>';
-            echo '<input type="checkbox" name="vins[]" id="vin2" value="beaujolais">';
-            echo '<label for="beaujolais">Beaujolais</label><br>';
-            echo '<input type="checkbox" name="vins[]" id="vin3" value="loire">';
-            echo '<label for="loire">Loire</label>';
-            echo '<hr>';
-            echo '<input type="submit" name="valider" value="Valider">';
-            echo '</form>';
+    ?>
+            <form action="2.0-phponly.php" method="GET">
+                <h3>Nom : </h3>
+                <input type="text" name="nom" placeholder="Nom :"><br>
+                <input type="text" name="prenom" placeholder="Prénom :">
+                <hr>
+                <h3>Sexe : </h3>
+                <input type="radio" name="sexe" id="H" value="H">
+                <label for="H">Homme</label><br>
+                <input type="radio" name="sexe" id="F" value="F">
+                <label for="F">Femme</label>
+                <hr>
+                <h3>Vins : </h3>
+                <input type="checkbox" name="vins[]" id="vin1" value="bordeaux">
+                <label for="bordeaux">Bordeaux</label><br>
+                <input type="checkbox" name="vins[]" id="vin2" value="beaujolais">
+                <label for="beaujolais">Beaujolais</label><br>
+                <input type="checkbox" name="vins[]" id="vin3" value="loire">
+                <label for="loire">Loire</label>
+                <hr>
+                <input type="submit" name="valider" value="Valider">
+            </form>
+    <?php
         } else {
             $sexe = $_GET['sexe'];
             if ($sexe === "H") {
