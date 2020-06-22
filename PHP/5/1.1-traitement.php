@@ -50,5 +50,7 @@
         <p>Vous êtes <?php echo $article." fin".$suffixe; ?> connaisseur! Je vois que vous aimé le <?php echo implode($vins, " ainsi que le ").(count($vins) > 1 ? ". Ce sont de très bons vins!" : ". C'est un très bon vin!"); ?>
         <img src="./5Head.png"><img src="wine_glass.png">
     </div>
+
+    <?= "Hello World" ?>
 </body>
 </html>
