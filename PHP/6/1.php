@@ -44,7 +44,9 @@
         isset($_POST['password']) && 
         $_POST['password'] != "" && 
         isset($_POST['passwordconfirm']) &&
-        $_POST['passwordconfirm'] != "" 
+        $_POST['passwordconfirm'] != "" &&
+        $_POST['email'] == $_POST['emailconfirm'] &&
+        $_POST['password'] == $_POST['passwordconfirm']
     ) {
         echo 
             "<div style='text-align:left;'>",
@@ -60,21 +62,25 @@
 
     else
     {
-        isset($_POST['nom']) ? $nom = $_POST['nom'] : $nom = '';
-        isset($_POST['prenom']) ? $prenom = $_POST['prenom'] : $prenom = '';
-        isset($_POST['email']) ? $email = $_POST['email'] : $email = '';
-        isset($_POST['emailconfirm']) ? $emailconfirm = $_POST['emailconfirm'] : $emailconfirm = '';
-        isset($_POST['password']) ? $password = $_POST['password'] : $password = '';
-        isset($_POST['passwordconfirm']) ? $passwordconfirm = $_POST['passwordconfirm'] : $passwordconfirm = '';
+        // isset($_POST['nom']) ? $nom = $_POST['nom'] : $nom = '';
+        // isset($_POST['prenom']) ? $prenom = $_POST['prenom'] : $prenom = '';
+        // isset($_POST['email']) ? $email = $_POST['email'] : $email = '';
+        // isset($_POST['emailconfirm']) ? $emailconfirm = $_POST['emailconfirm'] : $emailconfirm = '';
+        // isset($_POST['password']) ? $password = $_POST['password'] : $password = '';
+        // isset($_POST['passwordconfirm']) ? $passwordconfirm = $_POST['passwordconfirm'] : $passwordconfirm = '';
+        $postTable = ['nom', 'prenom', 'email', 'emailconfirm', 'password', 'passwordconfirm'];
+        foreach ($postTable as $id) {
+            isset($_POST[$id]) ? $$id = $_POST[$id] : $$id = '';
+        }
     ?>
 
         <form action="1.php" method="post">
 
             <label for="genre">Sexe :</label>
             <select name="genre">
-                <option value="H" <?php if ($_POST['genre'] === "H") echo "selected" ?>>Homme</option>
-                <option value="F" <?php if ($_POST['genre'] === "F") echo "selected" ?>>Femme</option>
-                <option value="A" <?php if ($_POST['genre'] === "A") echo "selected" ?>>Autre</option>
+                <option value="H" <?php if (@$_POST['genre'] === "H") echo "selected" ?>>Homme</option>
+                <option value="F" <?php if (@$_POST['genre'] === "F") echo "selected" ?>>Femme</option>
+                <option value="A" <?php if (@$_POST['genre'] === "A") echo "selected" ?>>Autre</option>
             </select>
 
             <!--
@@ -89,21 +95,21 @@
             -->
 
             <p>
-                Nom : <?php if (isset($_POST['nom']) && $_POST['nom'] == "") echo "/!\\ Veuillez renseigner le champ Nom /!\\"; ?><br>
+                Nom :<br><?php if (isset($_POST['nom']) && $_POST['nom'] == "") echo "/!\\ Veuillez renseigner le champ Nom /!\\<br>"; ?>
                 <input type="text" name="nom" value=<?= $nom ?>>
             </p>
             <p>
-                Prénom :<?php if (isset($_POST['prenom']) && $_POST['prenom'] == "") echo "/!\\ Veuillez renseigner le champ Prénom /!\\"; ?><br>
+                Prénom :<br><?php if (isset($_POST['prenom']) && $_POST['prenom'] == "") echo "/!\\ Veuillez renseigner le champ Prénom /!\\<br>"; ?>
                 <input type="text" name="prenom" value=<?= $prenom ?>>
             </p>
             <hr>
 
             <p>
-                Email :<?php if (isset($_POST['email']) && $_POST['email'] == "") echo "/!\\ Veuillez renseigner le champ Email /!\\"; ?><br>
+                Email :<br><?php if (isset($_POST['email']) && $_POST['email'] == "") echo "/!\\ Veuillez renseigner le champ Email /!\\<br>"; ?>
                 <input type="email" name="email" value=<?= $email ?>>
             </p>
             <p>
-                Confirmation Email :<?php if (isset($_POST['emailconfirm']) && $_POST['emailconfirm'] == "") echo "/!\\ Veuillez renseigner le champ Confirmation Email /!\\"; ?><br>
+                Confirmation Email :<br><?php if (isset($_POST['emailconfirm']) && $_POST['emailconfirm'] == "") echo "/!\\ Veuillez renseigner le champ Confirmation Email /!\\<br>"; ?>
                 <input type="email" name="emailconfirm" value=<?= $emailconfirm ?>><br>
                 <?php   
                     if (
@@ -119,11 +125,11 @@
             <hr>
                 
             <p>
-                MDP :<br><?php if (isset($_POST['password']) && $_POST['password'] == "") echo "/!\\ Veuillez renseigner le champ MDP /!\\"; ?>
+                MDP :<br><?php if (isset($_POST['password']) && $_POST['password'] == "") echo "/!\\ Veuillez renseigner le champ MDP /!\\<br>"; ?>
                 <input type="password" name="password" value=<?= $password ?>>
             </p>
             <p>
-                Confirmation MDP :<br><?php if (isset($_POST['passwordconfirm']) && $_POST['passwordconfirm'] == "") echo "/!\\ Veuillez renseigner le champ Confirmation MDP /!\\"; ?>
+                Confirmation MDP :<br><?php if (isset($_POST['passwordconfirm']) && $_POST['passwordconfirm'] == "") echo "/!\\ Veuillez renseigner le champ Confirmation MDP /!\\<br>"; ?>
                 <input type="password" name="passwordconfirm" value=<?= $passwordconfirm ?>><br>
                 <?php   
                     if (
