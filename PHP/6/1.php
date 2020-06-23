@@ -41,11 +41,11 @@
         $_POST['email'] != "" && 
         isset($_POST['emailconfirm']) && 
         $_POST['emailconfirm'] != "" && 
+        $_POST['email'] == $_POST['emailconfirm'] &&
         isset($_POST['password']) && 
         $_POST['password'] != "" && 
         isset($_POST['passwordconfirm']) &&
         $_POST['passwordconfirm'] != "" &&
-        $_POST['email'] == $_POST['emailconfirm'] &&
         $_POST['password'] == $_POST['passwordconfirm']
     ) {
         echo 
