@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 2</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Vos coordonnées</legend>
+        <form action="">
+            <label for="nom">Votre nom : <input type="text" class="formulaire" name="nom" id=""></label><br>
+            <label for="prenom">Votre prénom : <input type="text" class="formulaire" name="prenom" id=""></label><br>
+            <label for="ville"> Votre ville :
+                <select name="ville" id="">
+                    <option value="strasbourg">Strasbourg</option>
+                    <option value="mulhouse">Mulhouse</option>
+                    <option value="colmar">Colmar</option>
+                    <option value="altkirch">Altkirch</option>
+                </select>
+            </label><br>
+        </form>
+    </fieldset>
+
+    <script type="text/javascript" src="../jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('.formulaire').focus(function() {
+                $(this).css('background', '#63acff');
+            });
+            $('.formulaire').blur(function() {
+                $(this).css('background', '#ff6e63');
+            });
+        });
+    </script>
+</body>
+
+</html>

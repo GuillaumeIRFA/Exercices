@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1</title>
+    <style>
+        .container {
+            width: 20%;
+            height: auto;
+        }
+        
+        img {
+            width: 100%;
+            height: auto;
+            border: 3px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="monkaW.png" alt="">
+    </div>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+    <script type="text/javascript">
+        $('img').mousedown(function(event) {
+            console.log(event, this);
+            switch (event.which) {
+                case 1:
+                    $(this).css('border', '3px solid red');
+                    break;
+                case 2:
+                    $(this).css('border', '3px solid blue');
+                    break;
+                case 3:
+                    $(this).css('border', '3px solid green');
+                    break;
+            }
+        });
+
+        $('img').mouseup(function(event) {
+            $(this).css('border', '3px solid black');
+        });
+    </script>
+</body>
+
+</html>
