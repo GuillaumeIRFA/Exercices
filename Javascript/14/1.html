@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice</title>
+    <style>
+        #buttons {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        img {
+            margin-top: 64px;
+            width: 64px;
+            height: 64px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="buttons">
+        <input type="button" id="pepe" value="Show me Pepe!">
+        <input type="button" id="champ" value="Show me Champ!">
+        <input type="button" id="fpepe" value="[FADE] Show me Pepe!">
+        <input type="button" id="fchamp" value="[FADE] Show me Champ!">
+    </div>
+    <img src="FeelsOkayMan.png" class="pepe" alt="">
+    <img src="OkayChamp.png" class="champ" alt="">
+    <img src="FeelsWeirdMan.png" class="pepe" alt="">
+    <img src="WeirdChamp.png" class="champ" alt="">
+    <img src="YEP.png" class="pepe" alt="">
+    <img src="PogU.png" class="champ" alt="">
+    <img src="PepeLaugh.png" class="pepe" alt="">
+    <img src="Pog.png" class="champ" alt="">
+    <img src="monkaW.png" class="pepe" alt="">
+    <img src="PauseChamp.png" class="champ" alt="">
+
+    <script src="../jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('#pepe').click(function() {
+                $('.pepe').show(200);
+                $('.champ').hide(200);
+            });
+            $('#champ').click(function() {
+                $('.champ').show(200);
+                $('.pepe').hide(200);
+            });
+            $('#fpepe').click(function() {
+                $('.pepe').first().fadeIn(500, function fadeInNextPepe() {
+                    $(this).next().next('.pepe').fadeIn(500, fadeInNextPepe);
+                })
+                $('.champ').first().fadeOut(500, function fadeOutNextChamp() {
+                    $(this).next().next('.champ').fadeOut(500, fadeOutNextChamp);
+                });
+            });
+            $('#fchamp').click(function() {
+                $('.champ').first().fadeIn(500, function fadeInNextChamp() {
+                    $(this).next().next('.champ').fadeIn(500, fadeInNextChamp);
+                })
+                $('.pepe').first().fadeOut(500, function fadeOutNextPepe() {
+                    $(this).next().next('.pepe').fadeOut(500, fadeOutNextPepe);
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
