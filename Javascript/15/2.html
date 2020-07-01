@@ -6,40 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercice 2</title>
     <style>
-        img {
+        .min {
             width: 100px;
             height: 100px;
+        }
+        
+        .big {
+            width: 200px;
+            height: 200px;
         }
     </style>
 </head>
 
 <body>
-    <img src="../../images/monkaW.png" alt="">
-    <img src="../../images/PepeLaugh.png" alt="">
-    <img src="../../images/FeelsOkayMan.png" alt="">
-    <img src="../../images/FeelsWeirdMan.png" alt="">
-    <img src="../../images/YEP.png" alt="">
+    <img class="min" src="../../images/monkaW.png" alt="">
+    <img class="big" src="../../images/monkaW.png" alt="">
+    <img class="min" src="../../images/PepeLaugh.png" alt="">
+    <img class="big" src="../../images/PepeLaugh.png" alt="">
+    <img class="min" src="../../images/FeelsOkayMan.png" alt="">
+    <img class="big" src="../../images/FeelsOkayMan.png" alt="">
+    <img class="min" src="../../images/FeelsWeirdMan.png" alt="">
+    <img class="big" src="../../images/FeelsWeirdMan.png" alt="">
+    <img class="min" src="../../images/YEP.png" alt="">
+    <img class="big" src="../../images/YEP.png" alt="">
 
     <script src="../jquery.min.js"></script>
     <script>
         $(function() {
-            $('img').hover(
-                function() {
-                    $(this).fadeIn(1000, function() {
-                        $(this).css({
-                            'width': '200px',
-                            'height': '200px'
-                        });
-                    })
-                },
+            $('.big').hide();
+            $('.min').hover(
                 function() {
                     $(this).fadeOut(1000, function() {
-                        $(this).css({
-                            'width': '100px',
-                            'height': '100px'
-                        });
-                    })
-                })
+                        $('.big[src="' + $(this)[0].attributes[1].value + '"]').fadeIn(1000);
+                    });
+                }, null
+            );
+            $('.big').hover(
+                null,
+                function() {
+                    $(this).fadeOut(1000, function() {
+                        $('.min[src="' + $(this)[0].attributes[1].value + '"]').fadeIn(1000);
+                    });
+                }
+            );
+
+            // $(this)[0].className === "min" ?
+            //     function() {
+            //         $(this).fadeOut(1000, function() {
+            //             $('.big[src="' + $(this)[0].attributes[1].value + '"]').fadeIn(1000);
+            //         });
+            //     },
+            //     function() {
+
+            //     }
+            //  : 
+            //     function() {
+            //         $(this).fadeOut(1000, function() {
+            //             $('.min[src="' + $(this)[0].attributes[1].value + '"]').fadeIn(1000);
+            //         });
+            //     },
+            //     function() {
+
+            //     }
+            // );
         });
     </script>
 
