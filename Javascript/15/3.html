@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 2</title>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <select name="imageSelect" id="imageSelect">
+            <option value="monkaW">monkaW</option>
+            <option value="PepeLaugh">PepeLaugh</option>
+            <option value="FeelsOkayMan">FeelsOkayMan</option>
+            <option value="FeelsWeirdMan">FeelsWeirdMan</option>
+            <option value="YEP">YEP</option>
+        </select>
+        <input type="button" id="showImage" value="Valider">
+    </form>
+    <img src="" alt="">
+
+    <script src="../jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('img').hide();
+            $('#showImage').click(function(e) {
+                console.log(this, e);
+                console.log($('#imageSelect'));
+                $('img').attr('src', '../../images/' + $('#imageSelect')[0].value + '.png');
+                $('img').show();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

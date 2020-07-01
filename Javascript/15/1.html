@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1</title>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../../images/monkaW.png" alt="">
+    <img src="../../images/PepeLaugh.png" alt="">
+    <img src="../../images/FeelsOkayMan.png" alt="">
+    <img src="../../images/FeelsWeirdMan.png" alt="">
+    <img src="../../images/YEP.png" alt="">
+
+    <script src="../jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('img').hover(
+                function() {
+                    $(this).css({
+                        'width': '200px',
+                        'height': '200px'
+                    });
+                },
+                function() {
+                    $(this).css({
+                        'width': '100px',
+                        'height': '100px'
+                    });
+                })
+        });
+    </script>
+
+</body>
+
+</html>
