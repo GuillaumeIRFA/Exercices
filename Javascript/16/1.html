@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 1</title>
+</head>
+
+<body>
+    <div class="container-1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus massa ipsum, aliquam non imperdiet et, viverra quis ex. Nullam molestie leo in turpis consectetur, id viverra arcu lacinia. Etiam placerat ullamcorper tellus ut convallis. Duis ornare
+        dui at interdum tempus. Morbi odio tellus, fringilla a dapibus eget, efficitur quis dui. Vestibulum gravida posuere porta. Vivamus erat urna, malesuada ac diam et, aliquam cursus neque. Duis sit amet leo ut dui molestie ullamcorper sit amet quis
+        turpis. Curabitur eget varius orci, id feugiat mi. Vivamus eu lectus vitae sapien volutpat euismod.
+    </div>
+    <button id="update-1">Update me!</button>
+    <hr>
+
+    <div class="container-2">
+        Sed enim velit, faucibus nec hendrerit ut, dignissim sed magna. Morbi bibendum dui in malesuada consequat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum ante ex, tempor ac egestas et, auctor et ante.
+        Sed dapibus nibh nisi, vel gravida quam consectetur quis. Praesent dapibus dui metus, vitae consectetur sem hendrerit ut. Suspendisse venenatis tortor nulla, sed aliquam nunc egestas vitae. Cras ultricies nisl vel ipsum efficitur, sit amet tincidunt
+        nulla faucibus. Donec in accumsan orci. Nulla dictum eros lobortis leo dapibus tincidunt. Curabitur convallis diam in est consequat, in fermentum lectus tempus. Maecenas at tincidunt ante. Aliquam euismod nec urna nec dictum. Donec fermentum aliquet
+        augue, eget fermentum nisi elementum nec. Ut aliquet semper dictum. Donec rutrum felis quis aliquet dignissim.
+    </div>
+    <hr>
+
+    <div class="container-3">
+        <img src="../../images/FeelsWeirdMan.png" alt="">
+    </div>
+    <button id="update-3">Update me!</button>
+    <hr>
+
+    <div class="container-4">
+        Donec et neque leo. Suspendisse facilisis lectus nec mollis bibendum. Cras ultricies quam mi, lobortis interdum libero porttitor nec. Suspendisse in turpis ultrices, sodales quam sit amet, fermentum metus. Morbi facilisis dapibus nibh eu consectetur.
+        Praesent sagittis neque et leo dapibus, non scelerisque nisl faucibus. Integer rutrum hendrerit nunc. Aliquam ipsum tellus, interdum ac orci porta, pretium fringilla est. Mauris imperdiet venenatis erat, ac rutrum dui.
+    </div>
+    <hr>
+
+    <div class="container-5">
+        Pellentesque ut justo accumsan, porttitor sem at, pretium mi. Proin justo nunc, egestas ac dapibus vestibulum, rutrum id turpis. Sed aliquet lorem ac erat laoreet, eu tempus justo cursus. Curabitur vitae sapien dapibus, aliquam ligula ut, lacinia nulla.
+        Sed sed est non nisl vestibulum feugiat. Morbi suscipit varius quam et faucibus. Donec vitae urna id risus ultrices tempus. Morbi semper sollicitudin scelerisque. Donec et iaculis mauris. Nullam suscipit sed velit non mattis. Duis id augue tortor.
+        Mauris ultrices hendrerit odio. Integer vulputate elit dolor. Vestibulum est purus, tincidunt eget nibh faucibus, varius gravida augue.
+    </div>
+    <button id="update-5">Update me!</button>
+    <hr>
+
+    <div class="container-6">
+        <img src="../../images/FeelsOkayMan.png" alt="">
+    </div>
+    <hr>
+
+    <script src="../jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('button').click(function() {
+                buttonId = $(this).attr('id');
+                index = buttonId.substring(buttonId.length - 1, buttonId.length);
+                $('.container-' + index).load('maj' + index + '.html');
+            });
+        });
+    </script>
+</body>
+
+</html>
