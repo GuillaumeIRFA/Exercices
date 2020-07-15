@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/screen.css">
+</head>
+
+<body>
+    <form class="cmxform" id="commentForm" action="">
+        <fieldset>
+            <legend>Vos coordonées</legend>
+            <p>
+                <label for="cname">Nom :</label>
+                <input type="text" name="name" id="cname" required>
+            </p>
+            <p>
+                <label for="cemail">Email :</label>
+                <input type="email" name="email" id="cemail" required>
+            </p>
+            <p>
+                <label for="curl">URL :</label>
+                <input type="url" name="url" id="curl">
+            </p>
+            <p>
+                <label for="ccomment">Commentaire :</label>
+                <textarea name="comment" id="ccomment" required></textarea>
+
+            </p>
+            <p>
+                <input class="submit" type="submit" value="Submit">
+            </p>
+        </fieldset>
+    </form>
+
+    <script src="../jquery.min.js"></script>
+    <script src="./jquery.validate.min.js"></script>
+    <script>
+        $(function() {
+            $('input:submit').click(function() {
+                $('#commentForm').validate();
+            });
+        });
+    </script>
+</body>
+
+</html>
