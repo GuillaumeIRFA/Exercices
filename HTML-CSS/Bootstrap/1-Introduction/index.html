@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap.min.css">
+    <style>
+        section,
+        aside,
+        .col-lg-1,
+        .col-lg-2,
+        .col-lg-3,
+        .col-lg-4,
+        .col-lg-5,
+        .col-lg-6,
+        .col-lg-7,
+        .col-lg-8,
+        .col-lg-9,
+        .col-lg-10,
+        .col-lg-11,
+        .col-lg-12 {
+            border: 1px solid black;
+            border-radius: 5px;
+            background: cyan;
+            text-align: center;
+        }
+        
+        header,
+        footer,
+        section,
+        aside,
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .spacer {
+            height: 100px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">6 colonnes
+                <div class="row"></div>
+                <div class="row">
+                    <div class="col-lg-4">4 colonnes</div>
+                    <div class="col-lg-4 offset-lg-4">4 colonnes</div>
+                </div>
+            </div>
+            <div class="col-lg-6">6 colonnes
+                <div class="row"></div>
+                <div class="row">
+                    <div class="col-lg-4">4 colonnes</div>
+                    <div class="col-lg-8">8 colonnes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="container">
+        <div class="row" style="height:60px;">
+            <header class="col-lg-12">Entete</header>
+        </div>
+        <div class="row" style="height:150px;">
+            <div class="col-lg-2">
+                <aside class="row" style="height:60px;">Aside</aside>
+                <aside class="row" style="height:60px;">Aside</aside>
+            </div>
+            <section class="col-lg-8">Section</section>
+            <div class="col-lg-2">
+                <aside class="row" style="height:60px;">Aside</aside>
+                <aside class="row" style="height:60px;">Aside</aside>
+            </div>
+        </div>
+        <div class="row" style="height:60px;">
+            <footer class="col-lg-12">Pied de page</footer>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="container-fluid">
+        <div class="row" style="height:60px;">
+            <header class="col-lg-12">Entete</header>
+        </div>
+        <div class="row" style="height:150px; display: flex; justify-content: center;">
+            <nav class="col-lg-1">Naviguation</nav>
+            <section class="col-lg-3">Section</section>
+            <section class="col-lg-3">Section</section>
+        </div>
+        <div class="row" style="height:60px; display: flex; justify-content: center;">
+            <footer class="col-lg-7">Pied de page</footer>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
