@@ -13,25 +13,25 @@ stop.addEventListener("click", stopperTrain);
 
 function accelerer() {
 
+    function frame() {
+        posActuelle = document.getElementById("train").style.left;
+        testerPosition(posActuelle);
+        document.getElementById("train").style.left = trainPosition++ + "px";
+    }
+
     if (velocity < 150) {
         velocity++;
     }
 
     clearInterval(trainInterval);
     trainInterval = setInterval(accelerer, nonTraction - velocity);
-
-    function frame() {
-        posActuelle = document.getElementById("train").style.left;
-        testerPosition(posActuelle);
-        document.getElementById("train").style.left = trainPosition++ + "px";
-    }
     frame();
 }
 
 function testerPosition(posActuelle) {
 
-    console.log(posActuelle);
     if (parseInt(posActuelle) + 100 > 360) {
+        clearInterval(trainInterval);
         alert("You L OMEGALUL S T");
     }
 }
