@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#conteneur {
+    padding: 10px;
+    width: 360px;
+    height: 80%;
+    background-color: #00FF00;
+}
+
+#rails {
+    width: 340px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    margin: 20px auto;
+}
+
+#train {
+    height: 92px;
+    width: 100px;
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+}
+
+#btnStopper {
+    padding-top: 15px;
+    margin: 10px auto;
+    background-color: white;
+    width: 100px;
+    height: 50px;
+    color: red;
+    text-align: center;
+    font-size: 24px;
+    line-height: 30px;
+}
