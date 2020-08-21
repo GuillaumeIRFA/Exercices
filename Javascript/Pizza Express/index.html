@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Express</title>
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>Les Pizzas</legend>
+        <label for="pizza-liste">Choisissez une Pizza</label>
+        <select name="" id="pizza-liste">
+            <option value="reine">Reine</option>
+            <option value="margherita">Margherita</option>
+            <option value="pepperoni">Pepperoni</option>
+        </select>
+        <br>
+
+        <label for="pizza-menu">Menu</label>
+        <input type="radio" name="menu" id="pizza-menu" checked>
+        <br>
+        <label for="pizza-solo">Seule</label>
+        <input type="radio" name="menu" id="pizza-solo">
+        <br>
+
+        <label for="quantity">Quantité</label>
+        <input type="text" name="" id="quantity" size="2">
+    </fieldset>
+
+    <fieldset>
+        <legend>Suppléments garniture</legend>
+        <input type="checkbox" name="supplement-garniture" id="champignon">
+        <label for="champignon">Champignons</label><br>
+        <input type="checkbox" name="supplement-garniture" id="jambon">
+        <label for="jambon">Jambon</label><br>
+        <input type="checkbox" name="supplement-garniture" id="mozzarella">
+        <label for="Mozzarella">Mozzarella</label><br>
+    </fieldset>
+
+    <fieldset>
+        <input type="button" id="add-to-cart" value="Ajouter">
+        <input type="button" id="edit-cart" value="Editer">
+    </fieldset>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
