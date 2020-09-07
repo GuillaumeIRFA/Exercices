@@ -1,0 +1,43 @@
+.container {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.myCard {
+    background-color: #EFEFEFEF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 120px;
+    margin: 1px 0px;
+}
+
+.light-blue {
+    color: lightblue;
+}
+
+.need-space,
+.need-space p,
+.dropdown {
+    display: inline;
+}
+
+.dnone {
+    display: inline;
+}
+
+@media screen and (min-width: 750px) {
+    .myCard {
+        flex-direction: column;
+        width: 200px;
+        height: 200px;
+    }
+    .dnone {
+        display: none;
+    }
+}

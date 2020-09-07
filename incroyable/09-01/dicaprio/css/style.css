@@ -1,0 +1,57 @@
+.myBackgroundIsAnImageOfDiCaprio {
+    width: 200px;
+    height: 200px;
+    background-image: url("../img/dicaprio.png");
+    background-size: cover;
+}
+
+.blackAndWhite {
+    background-image: url("../img/dicaprio.png");
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+}
+
+.blackAndWhite:hover {
+    filter: grayscale();
+    transition: 2s;
+    background-image: url("../img/Jebaited.png");
+    border-radius: 50%;
+}
+
+.coggers {
+    width: 200px;
+    height: 200px;
+    background-image: url("../img/IQ.jpg");
+    background-size: cover;
+    transform-origin: 100px -8px;
+}
+
+.coggers:hover {
+    background-image: url("../img/COGGERS.png");
+    transform: rotate(-180deg);
+    transition: 2s;
+}
+
+.feu {
+    width: 200px;
+    height: auto;
+    position: absolute;
+    right: 0;
+}
+
+.voiture {
+    position: relative;
+    top: 100px;
+    width: 250px;
+    height: auto;
+}
+
+.voiture:hover {
+    transform: translateX(calc(100vw - 450px));
+    transition: 3s;
+}
+
+.bloc {
+    height: 300px;
+}

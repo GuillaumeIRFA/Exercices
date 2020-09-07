@@ -1,0 +1,179 @@
+@import "AtlasGroteskFont.css";
+
+/* * {
+    -webkit-font-smoothing: antialiased;
+} */
+
+body {
+    font-family: "AtlasGrotesk";
+    font-weight: normal;
+    color: dimgray;
+}
+
+nav {
+    height: 8vh;
+}
+
+.ghostblue {
+    background-color: #f4faff;
+}
+
+.ghostwhite {
+    background-color: ghostwhite;
+}
+
+.header {
+    width: 100%;
+    padding: 30px;
+}
+
+.centered {
+    text-align: center;
+}
+
+.titre {
+    font-weight: 300;
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.card {
+    height: 480px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    font-size: 1.4em;
+    height: 15%;
+}
+
+.card-body {
+    height: 85%;
+    padding: 0px 25px;
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-title h5 {
+    font-size: 3.5em;
+}
+
+.card-title p {
+    margin: 0;
+}
+
+.card-text {
+    height: 40%;
+}
+
+.card-button {
+    height: 20%;
+}
+
+.card-button p {
+    margin: 5px 0 0 0;
+}
+
+#last-card-title {
+    font-size: 2.5em;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.best-value {
+    background-color: #99c6f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.best-value-text {
+    line-height: 26px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.card-text ul {
+    margin: 0px 0px 20px 0px;
+    padding: 0px 0px 0px 20px;
+}
+
+.card-text li {
+    padding: 5px 0px;
+}
+
+#li-storage {
+    list-style-image: url("../img/storage.png");
+}
+
+#li-tools {
+    list-style-image: url("../img/tools.png");
+}
+
+#li-features {
+    list-style-image: url("../img/features.png");
+}
+
+#li-solutions {
+    list-style-image: url("../img/solutions.png");
+}
+
+#li-scale {
+    list-style-image: url("../img/scale.png");
+}
+
+#li-needs {
+    list-style-image: url("../img/needs.png");
+}
+
+.card-columns {
+    column-count: 2;
+}
+
+.feed {
+    padding: 5px;
+    margin: 5px;
+    height: auto;
+    border: none;
+}
+
+.faq h1 {
+    padding: 5px;
+    margin: 25px 5px;
+}
+
+.large-padding {
+    padding: 90px;
+}
+
+.description {
+    margin-top: 30px;
+}
+
+li.desc {
+    margin-left: -50px;
+    background: url("../img/check-solid.svg") 10px 7px no-repeat;
+    background-size: initial;
+    list-style: none;
+    font-size: 14px;
+    line-height: 26px;
+    padding-left: 50px;
+}
+
+.bold {
+    font-weight: bold;
+}

@@ -1,0 +1,14 @@
+.pink {
+    background-color: pink;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+aside {
+    height: fit-content;
+}

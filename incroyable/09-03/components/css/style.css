@@ -1,0 +1,26 @@
+.card {
+    margin: 10px 0px 0px 0px;
+}
+
+.youpi {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+}
+
+.justify {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#exampleModal {
+    position: absolute;
+    left: 50%;
+    z-index: 11000;
+    overflow: visible;
+}
+
+.btn-group {
+    margin: 2px;
+}
