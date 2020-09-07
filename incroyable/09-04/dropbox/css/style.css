@@ -1,34 +1,80 @@
 @import "AtlasGroteskFont.css";
-
-/* * {
+* {
     -webkit-font-smoothing: antialiased;
-} */
+}
+
+
+/* 
+*
+* GENERAL DECLARATION
+*
+*/
 
 body {
     font-family: "AtlasGrotesk";
-    font-weight: normal;
-    color: dimgray;
+    font-size: 14px;
+    line-height: 26px;
+    color: #47525d;
 }
 
-nav {
-    height: 8vh;
+.col {
+    padding: 0px;
+    margin: 10px;
 }
 
-.ghostblue {
+.container {
+    max-width: 990px;
+}
+
+.bg-ghostblue {
     background-color: #f4faff;
 }
 
-.ghostwhite {
+.bg-ghostwhite {
     background-color: ghostwhite;
 }
 
-.header {
+.bg-dodgerblue {
+    background-color: #0071e0;
+}
+
+.font-weight-600 {
+    font-weight: 600;
+}
+
+.w-100 {
     width: 100%;
-    padding: 30px;
 }
 
 .centered {
     text-align: center;
+}
+
+
+/* 
+*
+* HEADER 
+*
+*/
+
+.navbar {
+    height: 8vh;
+    position: fixed;
+    z-index: 50000;
+    background: white;
+    width: 100%;
+}
+
+.nav-button {
+    font-size: 13px;
+    line-height: 22px;
+    font-weight: 400;
+    padding: 5px 18px;
+    border: rgba(128, 128, 128, 0.404) 1px solid;
+}
+
+.header {
+    margin: calc(8vh + 50px) 0px 70px;
 }
 
 .titre {
@@ -36,6 +82,13 @@ nav {
     margin-bottom: 10px;
     font-size: 32px;
 }
+
+
+/*
+*
+* PRICING SECTION
+*
+*/
 
 .card {
     height: 480px;
@@ -51,7 +104,8 @@ nav {
 
 .card-body {
     height: 85%;
-    padding: 0px 25px;
+    /* padding: 0px 25px; */
+    padding: 40px 25px 10px;
     font-size: 1em;
     display: flex;
     flex-direction: column;
@@ -59,14 +113,16 @@ nav {
 }
 
 .card-title {
-    height: 40%;
+    margin-top: 0px;
+    height: 35%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .card-title h5 {
-    font-size: 3.5em;
+    font-size: 47px;
+    font-weight: 200;
 }
 
 .card-title p {
@@ -74,7 +130,7 @@ nav {
 }
 
 .card-text {
-    height: 40%;
+    height: 45%;
 }
 
 .card-button {
@@ -86,11 +142,7 @@ nav {
 }
 
 #last-card-title {
-    font-size: 2.5em;
-}
-
-.w-100 {
-    width: 100%;
+    font-size: 35px;
 }
 
 .best-value {
@@ -98,13 +150,16 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.best-value-text {
+    position: absolute;
+    height: 30px;
+    top: -30px;
+    width: 100%;
+    border-radius: 2px 2px 0px 0px;
     line-height: 26px;
     font-size: 11px;
     font-weight: 600;
     color: #FFFFFF;
+    z-index: -1;
 }
 
 .card-text ul {
@@ -140,25 +195,12 @@ nav {
     list-style-image: url("../img/needs.png");
 }
 
-.card-columns {
-    column-count: 2;
-}
 
-.feed {
-    padding: 5px;
-    margin: 5px;
-    height: auto;
-    border: none;
-}
-
-.faq h1 {
-    padding: 5px;
-    margin: 25px 5px;
-}
-
-.large-padding {
-    padding: 90px;
-}
+/*
+*
+* PRICING ALT SECTION
+*
+*/
 
 .description {
     margin-top: 30px;
@@ -174,6 +216,183 @@ li.desc {
     padding-left: 50px;
 }
 
-.bold {
-    font-weight: bold;
+
+/*
+*
+* FAQ SECTION
+*
+*/
+
+.faq-left-col {
+    padding-right: 60px;
+    margin: 0;
+}
+
+.faq-right-col {
+    padding-left: 60px;
+    margin: 0;
+}
+
+.feed {
+    height: auto;
+    border: none;
+    padding: 0;
+    margin-bottom: 60px;
+}
+
+.feed .card-body {
+    padding: 0;
+}
+
+.feed .card-title {
+    font-weight: 400;
+    line-height: 28px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.feed .card-text {
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.faq-header {
+    margin: 50px 0px;
+    font-size: 32px;
+    font-weight: 300;
+    width: 100%;
+}
+
+
+/*
+*
+* QUOTE SECTION
+*
+*/
+
+.customer-banner {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 88px 0px;
+}
+
+.customer-banner img {
+    margin-left: 75px;
+    position: relative;
+    top: 0;
+    left: -50px;
+    z-index: 1200;
+}
+
+.blockquote {
+    justify-self: flex-end;
+    width: 565px;
+    font-weight: 100;
+    font-size: 21px;
+    line-height: 34px;
+}
+
+.blockquote-footer {
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 34px;
+}
+
+
+/*
+*
+* END SECTION
+*
+*/
+
+.end-section {
+    padding: 50px 0px 50px;
+}
+
+.end {
+    font-size: 31px;
+    font-weight: 100;
+    line-height: 40px;
+    padding-bottom: 20px;
+}
+
+.big-button-style {
+    line-height: 34px;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 8px 26px;
+}
+
+
+/*
+*
+* FOOTER MENU
+*
+*/
+
+.end-menu {
+    padding: 100px 0px;
+    color: #637282;
+}
+
+.end-menu col {
+    padding: 0;
+    margin: 0;
+}
+
+.end-menu ul {
+    list-style-type: none;
+    list-style-position: outside;
+    padding: 0;
+}
+
+.end-menu h3 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32px;
+    padding-bottom: 10px;
+}
+
+.end-menu li {
+    font-weight: 400px;
+    line-height: 26px;
+}
+
+.end-menu a {
+    color: #637282;
+}
+
+
+/*
+*
+* FOOTER
+*
+*/
+
+.footer {
+    padding: 50px 0px;
+}
+
+.footer i {
+    font-size: 1.6em;
+    color: #5b5d5e71;
+    margin: 5px;
+}
+
+.footer a {
+    color: #666;
+    font-weight: 600;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+}
+
+.footer .fa-globe-americas {
+    font-size: 1.5em;
+}
+
+.footer .fa-caret-up {
+    font-size: 0.9em;
 }
