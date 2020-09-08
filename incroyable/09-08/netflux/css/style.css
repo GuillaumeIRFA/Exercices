@@ -1,0 +1,31 @@
+@import "navbar.css";
+@import "header.css";
+@import "catalogue.css";
+
+/*
+*
+* GENERAL
+*
+*/
+
+body {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.bg-dark {
+    background-color: #181a1b;
+}

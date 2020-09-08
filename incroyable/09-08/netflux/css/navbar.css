@@ -1,0 +1,67 @@
+.navbar {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    margin: 0;
+    height: 10vh;
+    background: transparent;
+}
+
+.navbar-gradient {
+    background: linear-gradient(180deg, #181a1b, transparent);
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo-img {
+    background: url("../../../../images/FeelsOkayMan.png");
+    height: 50px;
+    width: 50px;
+    background-size: cover;
+}
+
+.navbar-title {
+    padding-left: 10px;
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 600;
+}
+
+.navbar-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    min-width: 200px;
+}
+
+.navbar-search {
+    width: 60%;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 786px) {
+    .navbar {
+        padding: 10px 4%;
+    }
+    .navbar-title {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 5px 10px;
+    }
+    .navbar-logo-img {
+        display: none;
+    }
+    /* .navbar-title {
+        font-size: 30px;
+    } */
+}

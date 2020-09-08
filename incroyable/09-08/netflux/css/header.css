@@ -1,0 +1,12 @@
+.header {
+    height: 100vh;
+    width: 100%;
+    background-image: url("https://picsum.photos/1200/1200");
+    background-size: cover;
+    background-position: 0px center;
+    z-index: -50;
+}
+
+@media screen and (max-width: 480px) {}
+
+@media screen and (max-width: 786px) {}
