@@ -1,3 +1,11 @@
+@import "responsive.css";
+
+/*
+*
+*
+*
+*/
+
 .blueasy-bg-dark {
     background-color: #353f46d8;
 }
@@ -59,12 +67,32 @@
     margin-right: -15px;
 }
 
-
-/**/
-
-.navbar {
-    height: 16vh;
+.section-title {
+    font-weight: 100;
 }
+
+.section {
+    padding: 75px 0px;
+}
+
+.underline-white {
+    width: 50px;
+    border: 1px solid white;
+    margin-top: -5px;
+}
+
+.underline-dark {
+    width: 50px;
+    border: 1px solid #515f67;
+    margin-top: -5px;
+}
+
+
+/*
+*
+* NAVBAR
+*
+*/
 
 .navbar-brand {
     font-size: 1.8em;
@@ -94,7 +122,11 @@
 }
 
 
-/**/
+/*
+*
+* HERO
+*
+*/
 
 .hero {
     height: 100vh;
@@ -121,29 +153,7 @@
 .hero-title {
     font-weight: 100;
     padding: 8px 20px;
-}
-
-
-/**/
-
-.section-title {
-    font-weight: 100;
-}
-
-.section {
-    padding: 75px 0px;
-}
-
-.underline-white {
-    width: 50px;
-    border: 1px solid white;
-    margin-top: -5px;
-}
-
-.underline-dark {
-    width: 50px;
-    border: 1px solid #515f67;
-    margin-top: -5px;
+    text-align: center;
 }
 
 
@@ -186,24 +196,25 @@
 
 .portfolio-item {
     position: relative;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     filter: grayscale(1);
-    height: 270px;
-    width: 270px;
     background-position: center center;
-    opacity: 75%;
 }
 
-.portfolio-item:hover .item-expand {
+.item-expand:hover {
     opacity: 100%;
     transition: 1s;
-    box-shadow: 0 0 1000px 1000px #353f47DD, inset 0 0 1000px 1000px #353f47DD;
 }
 
 .item-expand {
+    background-color: #353f47dd;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     opacity: 0%;
 }
 
@@ -257,6 +268,14 @@
     color: #353f46;
     font-weight: 700;
     font-size: 0.9em;
+}
+
+#video-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 
