@@ -1,0 +1,17 @@
+.cercle {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+.rouge {
+    background-color: red;
+}
+
+.bleu {
+    background-color: blue;
+}
+
+.vert {
+    background-color: green;
+}
