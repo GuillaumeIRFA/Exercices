@@ -1,0 +1,49 @@
+.myColSettings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid black;
+    height: 50vh;
+    transition: 2s;
+}
+
+.cercle {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    transition: 1s;
+}
+
+.oval {
+    height: 300px;
+    width: 200px;
+}
+
+.name {
+    display: none;
+}
+
+#item-1 {
+    background: url("http://picsum.photos/400") no-repeat center / cover;
+}
+
+#item-2 {
+    background: url("http://picsum.photos/405") no-repeat center / cover;
+}
+
+#item-3 {
+    background: url("http://picsum.photos/410") no-repeat center / cover;
+}
+
+#item-4 {
+    background: url("http://picsum.photos/415") no-repeat center / cover;
+}
+
+#item-5 {
+    background: url("http://picsum.photos/420") no-repeat center / cover;
+}
+
+.show {
+    display: block;
+}

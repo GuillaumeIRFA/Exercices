@@ -1,0 +1,23 @@
+.cercle {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+#cercle-1 {
+    background-color: green;
+}
+
+#cercle-2 {
+    background-color: blue;
+}
+
+.ease {
+    transition: 2s;
+    transition-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.modif {
+    height: 400px;
+    width: 400px;
+}

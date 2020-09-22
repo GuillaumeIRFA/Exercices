@@ -1,0 +1,60 @@
+.cercle {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rouge {
+    background-color: #CC3333;
+}
+
+.vert {
+    background-color: #33CC33;
+}
+
+.bleu {
+    background-color: #3333CC;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.pourpre {
+    background-color: purple;
+}
+
+.cyan {
+    background-color: cyan;
+}
+
+.bordure {
+    border: 4px solid;
+    padding: 20px;
+}
+
+.jaune {
+    border-color: #DDDD11;
+}
+
+.rose {
+    border-color: pink;
+}
+
+.marron {
+    border-color: #801010;
+}
+
+.carre-flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+#charles {}
+
+#joel {}
+
+#clement {}
