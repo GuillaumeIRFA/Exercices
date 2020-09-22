@@ -8,6 +8,10 @@
     transition: 2s;
 }
 
+h1 {
+    color: white;
+}
+
 .cercle {
     height: 100px;
     width: 100px;
@@ -24,24 +28,44 @@
     display: none;
 }
 
-#item-1 {
-    background: url("http://picsum.photos/400") no-repeat center / cover;
+#bg-1 {
+    background: url("https://i.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68") no-repeat center / cover;
 }
 
-#item-2 {
-    background: url("http://picsum.photos/405") no-repeat center / cover;
+#bg-2 {
+    background: url("https://i.picsum.photos/id/1000/5626/3635.jpg?hmac=qWh065Fr_M8Oa3sNsdDL8ngWXv2Jb-EE49ZIn6c0P-g") no-repeat center / cover;
 }
 
-#item-3 {
-    background: url("http://picsum.photos/410") no-repeat center / cover;
+#bg-3 {
+    background: url("https://i.picsum.photos/id/1002/4312/2868.jpg?hmac=5LlLE-NY9oMnmIQp7ms6IfdvSUQOzP_O3DPMWmyNxwo") no-repeat center / cover;
 }
 
-#item-4 {
-    background: url("http://picsum.photos/415") no-repeat center / cover;
+#bg-4 {
+    background: url("https://i.picsum.photos/id/1006/3000/2000.jpg?hmac=x83pQQ7LW1UTo8HxBcIWuRIVeN_uCg0cG6keXvNvM8g") no-repeat center / cover;
 }
 
-#item-5 {
-    background: url("http://picsum.photos/420") no-repeat center / cover;
+#bg-5 {
+    background: url("https://i.picsum.photos/id/1015/6000/4000.jpg?hmac=aHjb0fRa1t14DTIEBcoC12c5rAXOSwnVlaA5ujxPQ0I") no-repeat center / cover;
+}
+
+#buste-1 {
+    background: url("https://lamaisondejudith.fr/20297-large_default/figure-resine-50-x-32-x-79-cm-buste-et-tete-antique.jpg") no-repeat center / cover;
+}
+
+#buste-2 {
+    background: url("https://www.maisondunreve.com/media/catalog/product/cache/1/image/17f82f742ffe127f42dca9de82fb58b1/s/t/statue-buste-venus.jpg") no-repeat center / cover;
+}
+
+#buste-3 {
+    background: url("https://www.anticstore.com/DocBD/commerce/antiquaire/galerie-sismann-622/objet/81194/AnticStore-Large-Ref-81194_02.jpg") no-repeat center / cover;
+}
+
+#buste-4 {
+    background: url("https://www.ligerio.fr/images/products_images/360/IqrSW-Tb1Pm.jpeg/fm-pjpg/w-2000/h-2000/fit-max") no-repeat center / cover;
+}
+
+#buste-5 {
+    background: url("https://www.ligerio.fr/images/products_images/361/Cm8Tp-XP1Sx.jpeg/fm-pjpg/w-2000/h-2000/fit-max") no-repeat center / cover;
 }
 
 .show {
