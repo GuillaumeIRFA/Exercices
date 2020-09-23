@@ -1,0 +1,81 @@
+.panneaux {
+    height: 100vh;
+    display: flex;
+}
+
+.panneau {
+    flex: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    transition: 2s;
+    position: relative;
+}
+
+.panneau p {
+    color: white;
+    font-size: 3em;
+    text-transform: uppercase;
+    transition: 2s;
+}
+
+.panneau p:nth-of-type(1n) {
+    transform: translateY(-300%);
+}
+
+.panneau p:nth-of-type(2n) {
+    transform: translateY(300%);
+}
+
+.actif {
+    flex: 5;
+}
+
+.actif p {
+    transform: translateY(0) !important;
+}
+
+.border-x {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.panneau1 {
+    background-image: url("../img/bg-1.jpeg");
+}
+
+.panneau2 {
+    background-image: url("../img/bg-2.jpeg");
+}
+
+.panneau3 {
+    background-image: url("../img/bg-3.jpeg");
+}
+
+.panneau4 {
+    background-image: url("../img/bg-4.jpeg");
+}
+
+.panneau5 {
+    background-image: url("../img/bg-5.jpg");
+}
+
+.portrait {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo {
+    object-fit: cover;
+}
