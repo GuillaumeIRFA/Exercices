@@ -1,0 +1,19 @@
+.espaceVide {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    font-weight: bolder;
+}
+
+.divRouge {
+    color: red;
+    font-size: 1.2em;
+    transform: translateX(-100%);
+    transition: 1s;
+}
+
+.reset {
+    transform: translateX(0);
+}

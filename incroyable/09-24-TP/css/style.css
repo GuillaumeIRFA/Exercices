@@ -1,0 +1,205 @@
+.banner-bg {
+    background-color: #164059;
+    border-bottom: 1px solid black;
+}
+
+.bg {
+    background-image: url("../img/navbar-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.customNavbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 15vh;
+}
+
+.logo img {
+    height: 100px;
+    width: auto;
+}
+
+.menu a {
+    padding: 0px 40px;
+    color: white;
+    text-decoration: none;
+}
+
+.item-container {
+    display: flex;
+    height: 85vh;
+    margin-top: -1px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 2s;
+    border: 1px solid black;
+    margin-left: -1px;
+    margin-right: -1px;
+}
+
+#item-1 {
+    background-image: url("../img/zavala-bg.jpg");
+}
+
+#item-2 {
+    background-image: url("../img/ikora-bg.jpg");
+}
+
+#item-3 {
+    background-image: url("../img/cayde-bg.jpg");
+}
+
+#item-4 {
+    background-image: url("../img/shaxx-bg.jpg");
+}
+
+#item-1 .avatar {
+    background-image: url("../img/Zavala.png");
+}
+
+#item-2 .avatar {
+    background-image: url("../img/Ikora.png");
+}
+
+#item-3 .avatar {
+    background-image: url("../img/Cayde-6.jpg");
+}
+
+#item-4 .avatar {
+    background-image: url("../img/Lord_Shaxx.png");
+}
+
+.avatar {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    transition: 2s;
+    transform: translateY(0);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+.avatar img {
+    height: auto;
+    width: 100%;
+}
+
+.nameFrame {
+    /* overflow: hidden; */
+    display: flex;
+}
+
+.nameFrame p {
+    font-size: 2em;
+    color: white;
+    transition: 1s;
+    text-shadow: 0px 0px 10px black;
+}
+
+.nameFrame p:nth-of-type(1n) {
+    transform: translateX(-1000px);
+}
+
+.nameFrame p:nth-of-type(2n) {
+    transform: translateX(1000px);
+}
+
+.bio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: 2s;
+    transform: translateY(1000px);
+    width: 300px;
+}
+
+.bio h1 {
+    text-shadow: 0px 0px 10px black;
+}
+
+.bio p {
+    text-shadow: 0px 0px 10px black;
+}
+
+.active {
+    flex: 10;
+}
+
+.active .avatar {
+    height: 300px;
+    width: 300px;
+    transform: translateY(0%);
+}
+
+.active .nameFrame p {
+    transform: translateX(0) !important;
+}
+
+.active .bio {
+    font-size: 1em;
+    transform: translateY(0);
+}
+
+.articleZone {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.article {
+    color: white;
+    flex: 1 0 50%;
+    padding: 100px 60px;
+    transition: transform 2s;
+}
+
+.article:nth-of-type(1n) {
+    transform: translateX(-200%);
+}
+
+.article:nth-of-type(2n) {
+    transform: translateX(200%);
+}
+
+.articleSlideIn {
+    transform: translateX(0) !important;
+}
+
+.footer {
+    background-color: #164059;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    border-top: 1px solid black;
+}
+
+.footer p {
+    color: white;
+    margin: 0;
+}
+
+.footer p span {
+    color: white;
+    text-transform: uppercase;
+}
