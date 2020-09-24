@@ -1,14 +1,20 @@
+.mainContainer {
+    overflow: hidden;
+}
+
 .banner-bg {
     background-color: #164059;
     border-bottom: 1px solid black;
 }
 
-.bg {
+#background {
     background-image: url("../img/navbar-bg.jpg");
-    background-position: center;
+    position: fixed;
+    z-index: -100;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+    height: 100vh;
+    width: 100%;
 }
 
 .customNavbar {
@@ -33,6 +39,7 @@
     display: flex;
     height: 85vh;
     margin-top: -1px;
+    margin-bottom: 150px;
 }
 
 .item {
@@ -161,16 +168,50 @@
     transform: translateY(0);
 }
 
+.footer {
+    background-color: #164059;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    border-top: 1px solid black;
+    margin-top: 150px;
+}
+
+.footer p {
+    color: white;
+    margin: 0;
+}
+
+.footer p span {
+    color: white;
+    text-transform: uppercase;
+}
+
 .articleZone {
     display: flex;
     flex-wrap: wrap;
 }
 
+.articleSection {
+    flex: 1 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+    text-shadow: 0px 0px 10px black;
+    padding: 50px;
+}
+
 .article {
     color: white;
     flex: 1 0 50%;
-    padding: 100px 60px;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
     transition: transform 2s;
+    align-items: flex-start;
 }
 
 .article:nth-of-type(1n) {
@@ -185,21 +226,73 @@
     transform: translateX(0) !important;
 }
 
-.footer {
-    background-color: #164059;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 5vh;
-    border-top: 1px solid black;
+.articleContainer {
+    background-color: #20262d;
+    border: 1px solid #555;
+    box-shadow: 0 0 10px #000;
+    width: 320px;
+    max-height: fit-content;
 }
 
-.footer p {
+.articleHeader {
+    background-color: #CEAE33;
     color: white;
-    margin: 0;
+    padding: 5px 10px;
 }
 
-.footer p span {
-    color: white;
+.articleName {
     text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.articleStatus {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+}
+
+.articleRarity {
+    font-weight: 200px;
+}
+
+.articleWarning {
+    background-color: #A6602E;
+    color: white;
+    padding: 0px 10px;
+}
+
+.articleImage img {
+    width: 100%;
+    height: auto;
+}
+
+.articleInformation {
+    padding: 4px 10px;
+    font-size: 1em;
+}
+
+.articleInformation>div:not(:first-child) {
+    border-top: 1px solid rgba(255, 255, 255, .2);
+}
+
+.articleDescription {
+    font-size: 0.8em;
+    font-style: italic;
+    padding: 5px 5px 10px;
+}
+
+.articleCost {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.articleCurrency {
+    padding-left: 25px;
+    background: url("../img/silver.png") no-repeat left / contain;
+}
+
+.articleSource {
+    padding: 5px;
 }
