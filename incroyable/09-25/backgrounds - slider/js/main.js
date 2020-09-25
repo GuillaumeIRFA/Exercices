@@ -21,9 +21,9 @@ $(".sliderArrow").click(function() {
     let direction;
     let offset = 640;
     if ($(this).hasClass("sliderArrowLeft")) {
-        direction = "-";
-    } else {
         direction = "+";
+    } else {
+        direction = "-";
     }
     let slider = $(this).siblings(".sliderImagesContainer");
     let currentLeftPos = parseInt(slider.css("left"));

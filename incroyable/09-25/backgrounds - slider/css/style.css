@@ -4,6 +4,7 @@ body {
 }
 
 .header {
+    margin: auto;
     width: 640px;
     height: 360px;
     background-image: url("../img/beast_magic.jpg");
@@ -13,10 +14,11 @@ body {
 }
 
 .sliderFrame {
+    margin: auto;
     height: 360px;
     width: 640px;
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .sliderArrow {
