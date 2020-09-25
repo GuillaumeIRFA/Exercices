@@ -38,22 +38,22 @@ $(".sliderArrow").click(function() {
 
 $(".gauche").click(function() {
     var imageEnCours = $(this).siblings("div").find(".visible");
-    var imagePrecedente = $(this).siblings("div").find(".visible").prev();
-    imageEnCours.removeClass("visible");
+    var imagePrecedente = imageEnCours.prev();
     if (imagePrecedente.length) {
         imagePrecedente.addClass("visible");
     } else {
         imageEnCours.siblings().last().addClass("visible");
     }
+    imageEnCours.removeClass("visible");
 });
 
 $(".droite").click(function() {
     var imageEnCours = $(this).siblings("div").find(".visible");
-    var imageSuivante = $(this).siblings("div").find(".visible").next();
-    imageEnCours.removeClass("visible");
+    var imageSuivante = imageEnCours.next();
     if (imageSuivante.length) {
         imageSuivante.addClass("visible");
     } else {
         imageEnCours.siblings().first().addClass("visible");
     }
+    imageEnCours.removeClass("visible");
 });

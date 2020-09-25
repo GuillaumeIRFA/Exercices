@@ -1,6 +1,11 @@
 body {
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 150vh;
 }
 
 .header {
