@@ -28,8 +28,14 @@ button:focus {
     height: 15vh;
 }
 
+.logo {
+    margin-left: 50px;
+    height: 60%;
+    max-height: 70px;
+}
+
 .logo img {
-    height: 100px;
+    height: 100%;
     width: auto;
 }
 
@@ -349,7 +355,7 @@ button:focus {
 }
 
 .articleCurrency {
-    padding-left: 25px;
+    padding-left: 30px;
     background: url("../img/silver.png") no-repeat left / contain;
 }
 
