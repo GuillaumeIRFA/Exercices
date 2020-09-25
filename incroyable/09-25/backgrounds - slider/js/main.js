@@ -35,3 +35,25 @@ $(".sliderArrow").click(function() {
     console.log(slider.width());
     slider.css("left", `${newLeftPos}px`);
 });
+
+$(".gauche").click(function() {
+    var imageEnCours = $(this).siblings("div").find(".visible");
+    var imagePrecedente = $(this).siblings("div").find(".visible").prev();
+    imageEnCours.removeClass("visible");
+    if (imagePrecedente.length) {
+        imagePrecedente.addClass("visible");
+    } else {
+        imageEnCours.siblings().last().addClass("visible");
+    }
+});
+
+$(".droite").click(function() {
+    var imageEnCours = $(this).siblings("div").find(".visible");
+    var imageSuivante = $(this).siblings("div").find(".visible").next();
+    imageEnCours.removeClass("visible");
+    if (imageSuivante.length) {
+        imageSuivante.addClass("visible");
+    } else {
+        imageEnCours.siblings().first().addClass("visible");
+    }
+});

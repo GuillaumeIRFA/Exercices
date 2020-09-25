@@ -54,3 +54,36 @@ body {
     height: 100%;
     width: auto;
 }
+
+.slider {
+    position: relative;
+    width: 640px;
+    margin: auto;
+}
+
+.monImage {
+    width: 640px;
+    height: 360px;
+}
+
+.monImage img {
+    display: none;
+    width: 640px;
+    height: 360px;
+}
+
+img.visible {
+    display: block;
+}
+
+.gauche {
+    position: absolute;
+    top: 5%;
+    left: -1.5%;
+}
+
+.droite {
+    position: absolute;
+    top: 5%;
+    right: -1.5%;
+}
