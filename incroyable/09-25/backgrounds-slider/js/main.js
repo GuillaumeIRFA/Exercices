@@ -19,20 +19,29 @@ changeBackground(backgroundImageUrls);
 
 $(".sliderArrow").click(function() {
     let direction;
-    let offset = 640;
+    let slider = $(this).siblings(".sliderImagesContainer");
+    let copySlider = slider.clone();
+
+    let sliderWidth = slider.width();
+    let imageCount = slider.children().length;
+    let imageWidth = slider.width() / imageCount;
+    let currentImage = Math.round(parseInt(slider.css("left")) / imageWidth);
+
     if ($(this).hasClass("sliderArrowLeft")) {
         direction = "+";
     } else {
         direction = "-";
     }
-    let slider = $(this).siblings(".sliderImagesContainer");
-    let currentLeftPos = parseInt(slider.css("left"));
-    let newLeftPos = eval(currentLeftPos + direction + offset);
+    let newLeftPos = eval(currentImage * imageWidth + direction + imageWidth);
 
-    if (newLeftPos <= eval("-" + slider.width())) newLeftPos = 0;
-    if (newLeftPos >= 640) newLeftPos = eval("-" + slider.width() + "+640");
-    console.log(newLeftPos);
-    console.log(slider.width());
+    if (newLeftPos <= eval("-" + sliderWidth)) {
+        // slider.children(`img:nth-of-type(${(Math.abs(currentImage) + 1) % 6 + 1})`).clone().appendTo(slider);
+        newLeftPos = 0;
+    }
+    if (newLeftPos >= imageWidth) {
+        // slider.children(`img:nth-of-type(${(Math.abs(currentImage) + 1) % 6 + 1})`).clone().prependTo(slider);
+        newLeftPos = eval("-" + sliderWidth + "+640");
+    }
     slider.css("left", `${newLeftPos}px`);
 });
 

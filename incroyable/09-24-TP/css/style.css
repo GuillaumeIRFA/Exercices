@@ -2,6 +2,10 @@
     overflow: hidden;
 }
 
+button:focus {
+    outline: 0;
+}
+
 .banner-bg {
     background-color: #164059;
     border-bottom: 1px solid black;
@@ -206,7 +210,7 @@
 
 .article {
     color: white;
-    flex: 1 0 50%;
+    flex: 1 0 34%;
     display: flex;
     justify-content: center;
     padding: 20px 0px;
@@ -228,10 +232,12 @@
 
 .articleContainer {
     background-color: #20262d;
+    z-index: -20;
     border: 1px solid #555;
     box-shadow: 0 0 10px #000;
     width: 320px;
     max-height: fit-content;
+    overflow: hidden;
 }
 
 .articleHeader {
@@ -262,18 +268,72 @@
     padding: 0px 10px;
 }
 
-.articleImage img {
+.articleImage {
+    position: relative;
     width: 100%;
-    height: auto;
+    height: 180px;
+}
+
+.articleArrow {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 30px;
+    font-size: 2em;
+    background-color: #20262d1e;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    transition: 0.3s;
+    opacity: 30%;
+}
+
+.articleArrow:hover {
+    background-color: #20262d;
+}
+
+.articleArrowLeft {
+    left: 0px;
+}
+
+.articleArrowRight {
+    right: 0px;
+}
+
+.articleImage:hover .articleArrow {
+    opacity: 100%;
+}
+
+.articleImage>img {
+    height: 100%;
+    width: auto;
+}
+
+.articleImagesContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    height: 100%;
+    display: flex;
+    transition: 0.3s;
+}
+
+.articleImagesContainer img {
+    height: 180px;
+    width: auto;
 }
 
 .articleInformation {
     padding: 4px 10px;
     font-size: 1em;
+    width: 100%;
 }
 
-.articleInformation>div:not(:first-child) {
-    border-top: 1px solid rgba(255, 255, 255, .2);
+.articleInformation>*:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
 }
 
 .articleDescription {
@@ -295,4 +355,27 @@
 
 .articleSource {
     padding: 5px;
+}
+
+.articleCart {
+    display: flex;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.articleQuantity {
+    background-color: #505152;
+    border: 1px solid rgba(255, 255, 255, .2);
+    color: white;
+    width: 50px;
+    border-radius: 0.25rem;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.articleAddToCart {
+    background-color: #505152;
+    color: white;
+    width: 100%;
+    border-color: rgba(255, 255, 255, .2) !important;
 }
