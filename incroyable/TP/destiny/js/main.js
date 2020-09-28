@@ -5,7 +5,7 @@ const articles = [
     ["Between Breaths", "Weapon Ornament", "Exotic", true, "desc", "img/between_breaths.jpg", "Silver", 700, "Eververse"],
     ["Bound Hammer", "Weapon Ornament", "Exotic", true, "desc", "img/bound_hammer.jpg", "Silver", 700, "Eververse"],
     ["Equinox", "Weapon Ornament", "Exotic", true, "desc", "img/equinox.jpg", "Silver", 700, "Eververse"],
-    ["One Terrible Screams", "Weapon Ornament", "Exotic", true, "desc", "img/one_terrible_screams.jpg", "Silver", 700, "Eververse"],
+    ["One Terrible Screams", "Weapon Ornament", "Exotic", true, "desc", "img/one_terrible_scream.jpg", "Silver", 700, "Eververse"],
     ["Wishes of Sorrow", "Weapon Ornament", "Exotic", true, "desc", "img/wishes_of_sorrow.jpg", "Silver", 700, "Eververse"],
     ["Jian", "Weapon Ornament", "Exotic", true, "desc", "img/jian.jpg", "Silver", 700, "Eververse"],
     ["The Gate Lord", "Weapon Ornament", "Exotic", true, "desc", "img/the_gate_lord.jpg", "Silver", 700, "Eververse"],
@@ -68,14 +68,16 @@ function updateCart(cart) {
     let total = 0;
 
     for (i = 0; i < cart.length; i++) {
-        cartContent += `<tr><th class="p-0"><img src='${cart[i][7]}'></th><td>${cart[i][0]}</td><td>${cart[i][2]}</td><td>${cart[i][8]}</td><td>${cart[i][9]}</td><td>${cart[i][1]}</td><td>${cart[i][9]*cart[i][1]}</td><td><button class="btn btn-warning cartDeleteItem">X</button></td></tr>`;
+        cartContent += `<tr cartIndex=${i}><th class="p-0"><img src='${cart[i][7]}'></th><td>${cart[i][0]}</td><td>${cart[i][2]}</td><td>${cart[i][8]}</td><td>${cart[i][9]}</td><td>${cart[i][1]}</td><td>${cart[i][9]*cart[i][1]}</td><td><button class="btn btn-warning cartDeleteItem">X</button></td></tr>`;
         total += cart[i][9] * cart[i][1];
     }
     $("#cartItems").html(cartContent);
 
     $(".cartDeleteItem").click(function() {
-        let index = parseInt($(this).parent().parent().children().next().html());
+        let index = parseInt($(this).parent().parent().attr("cartIndex"));
+        console.log(index);
         cart.splice(index, 1);
+
         updateCart(cart);
     });
 
