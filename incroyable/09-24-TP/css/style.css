@@ -183,12 +183,13 @@ button:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 5vh;
+    padding: 10px;
     border-top: 1px solid black;
     margin-top: 150px;
 }
 
 .footer p {
+    text-align: center;
     color: white;
     margin: 0;
 }
