@@ -7,12 +7,12 @@ const articles = [
     ["Equinox", "Weapon Ornament", "Exotic", true, "desc", "img/equinox.jpg", "Silver", 700, "Eververse"],
     ["One Terrible Screams", "Weapon Ornament", "Exotic", true, "desc", "img/one_terrible_scream.jpg", "Silver", 700, "Eververse"],
     ["Wishes of Sorrow", "Weapon Ornament", "Exotic", true, "desc", "img/wishes_of_sorrow.jpg", "Silver", 700, "Eververse"],
-    ["Jian", "Weapon Ornament", "Exotic", true, "desc", "img/jian.jpg", "Silver", 700, "Eververse"],
-    ["The Gate Lord", "Weapon Ornament", "Exotic", true, "desc", "img/the_gate_lord.jpg", "Silver", 700, "Eververse"],
-    ["Jotuneer", "Weapon Ornament", "Exotic", true, "desc", "img/jotuneer.jpg", "Silver", 700, "Eververse"],
-    ["One Fell Swoop", "Weapon Ornament", "Exotic", true, "desc", "img/one_fell_swoop.jpg", "Silver", 700, "Eververse"],
-    ["Threat Display", "Weapon Ornament", "Exotic", true, "desc", "img/threat_display.jpg", "Silver", 700, "Eververse"],
-    ["Obsidian Wings", "Weapon Ornament", "Exotic", true, "desc", "img/obsidian_wings.jpg", "Silver", 700, "Eververse"],
+    ["Jian", "Weapon Ornament", "Exotic", true, "desc", "img/jian.jpg", "Silver", 600, "Eververse"],
+    ["The Gate Lord", "Weapon Ornament", "Exotic", true, "desc", "img/the_gate_lord.jpg", "Silver", 600, "Eververse"],
+    ["Jotuneer", "Weapon Ornament", "Exotic", true, "desc", "img/jotuneer.jpg", "Silver", 800, "Eververse"],
+    ["One Fell Swoop", "Weapon Ornament", "Exotic", true, "desc", "img/one_fell_swoop.jpg", "Silver", 800, "Eververse"],
+    ["Threat Display", "Weapon Ornament", "Exotic", true, "desc", "img/threat_display.jpg", "Silver", 800, "Eververse"],
+    ["Obsidian Wings", "Weapon Ornament", "Exotic", true, "desc", "img/obsidian_wings.jpg", "Silver", 800, "Eververse"],
 ];
 
 $(".item").click(function() {
@@ -75,9 +75,7 @@ function updateCart(cart) {
 
     $(".cartDeleteItem").click(function() {
         let index = parseInt($(this).parent().parent().attr("cartIndex"));
-        console.log(index);
         cart.splice(index, 1);
-
         updateCart(cart);
     });
 
