@@ -26,7 +26,8 @@ body {
 }
 
 .navbar {
-    position: relative;
+    position: sticky;
+    top: 0;
     height: 8vh;
     width: 100%;
     background-color: #223d50f6;
@@ -62,11 +63,12 @@ body {
     transition: 2s;
 }
 
-.sticky {
+
+/* .sticky {
     position: fixed;
     top: 0;
     left: 0;
-}
+} */
 
 .navbar ul li.inactive {
     flex: 0 0 0%;
@@ -74,4 +76,19 @@ body {
 
 .navbar ul li.inactive img {
     width: 0rem;
+}
+
+.mainContent {
+    margin: auto;
+    width: 70%;
+    transition: width 1s;
+    transition: font-size 1s;
+    text-align: center;
+}
+
+.mainContent.enlarge {
+    margin-top: 1rem;
+    width: 80%;
+    padding: 2rem;
+    font-size: 1.2em;
 }
