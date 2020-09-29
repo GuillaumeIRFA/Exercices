@@ -46,17 +46,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 2s;
 }
 
 .navbar ul li a {
     text-decoration: none;
     color: white;
     padding: 20px;
+    overflow: hidden;
 }
 
 .navbar ul li img {
-    height: 100%;
-    width: auto;
+    height: auto;
+    width: 4rem;
+    transition: 2s;
 }
 
 .sticky {
@@ -66,6 +69,9 @@ body {
 }
 
 .navbar ul li.inactive {
-    overflow: hidden;
     flex: 0 0 0%;
+}
+
+.navbar ul li.inactive img {
+    width: 0rem;
 }
