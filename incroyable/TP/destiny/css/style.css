@@ -202,6 +202,11 @@ button:focus {
 
 .articleZone {
     display: flex;
+    flex-direction: column;
+}
+
+.articlesBloc {
+    display: flex;
     flex-wrap: wrap;
 }
 
@@ -218,20 +223,36 @@ button:focus {
 
 .article {
     color: white;
-    flex: 1 0 34%;
+    flex: 1;
     display: flex;
     justify-content: center;
     padding: 20px 0px;
-    transition: transform 2s;
+    transition: transform 1.6s;
     align-items: flex-start;
 }
 
 .article:nth-of-type(1n) {
-    transform: translateX(-200%);
+    transform: translateX(-2500px);
 }
 
 .article:nth-of-type(2n) {
-    transform: translateX(200%);
+    transform: translateX(-2000px);
+}
+
+.article:nth-of-type(3n) {
+    transform: translateX(-1500px);
+}
+
+.article:nth-of-type(4n) {
+    transform: translateX(1500px);
+}
+
+.article:nth-of-type(5n) {
+    transform: translateX(2000px);
+}
+
+.article:nth-of-type(6n) {
+    transform: translateX(2500px);
 }
 
 .articleSlideIn {
@@ -371,21 +392,52 @@ button:focus {
     margin-top: 5px;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 .articleQuantity {
     background-color: #505152;
     border: 1px solid rgba(255, 255, 255, .2);
     color: white;
     width: 50px;
     border-radius: 0.25rem;
-    margin-right: 10px;
     text-align: center;
+    margin: 0px 3px;
+}
+
+.articleMinus {
+    background-color: #505152;
+    color: white;
+    border-color: rgba(255, 255, 255, .2) !important;
+    width: 30px;
+    padding: 0;
+}
+
+.articlePlus {
+    background-color: #505152;
+    color: white;
+    border-color: rgba(255, 255, 255, .2) !important;
+    width: 30px;
+    padding: 0;
 }
 
 .articleAddToCart {
     background-color: #505152;
     color: white;
-    width: 100%;
+    flex: 1;
     border-color: rgba(255, 255, 255, .2) !important;
+    margin-left: 10px;
+}
+
+.articlesHidden {
+    display: none;
 }
 
 
@@ -441,6 +493,27 @@ button:focus {
 
 tfoot tr th {
     text-align: right;
+}
+
+.tdQuantity {
+    /* display: flex;
+    height: 100%; */
+}
+
+.cartMinus {
+    background-color: #505152;
+    color: white;
+    border-color: rgba(255, 255, 255, .2) !important;
+    width: 30px;
+    padding: 0;
+}
+
+.cartPlus {
+    background-color: #505152;
+    color: white;
+    border-color: rgba(255, 255, 255, .2) !important;
+    width: 30px;
+    padding: 0;
 }
 
 

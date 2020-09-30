@@ -97,3 +97,30 @@ $(".ajouterDesGens").click(function() {
     lesGens.push(individuAjouted);
     remplirLeTroisiemeTableau(lesGens);
 });
+
+
+// $("form").submit(function(e) {
+//     e.preventDefault();
+// });
+
+$('.enregistrer').click(function(event) {
+    event.preventDefault();
+
+    let personne = [];
+    let isValid = true;
+
+    personne.push($(this).siblings(".inputNom").val());
+    personne.push($(this).siblings(".inputAge").val());
+    personne.push($(this).siblings(".inputProfession").val());
+
+    for (i = 0; i < personne.length; i++) {
+        if (personne[i] == "") isValid = false;
+    }
+
+    if (personne.length != 3) isValid = false;
+
+    if (isValid) {
+        lesGens.push(personne);
+        remplirLeTroisiemeTableau(lesGens);
+    }
+});

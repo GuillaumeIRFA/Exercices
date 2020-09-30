@@ -81,14 +81,13 @@ body {
 .mainContent {
     margin: auto;
     width: 70%;
-    transition: width 1s;
-    transition: font-size 1s;
+    font-size: 105%;
+    transition: 2s;
     text-align: center;
 }
 
 .mainContent.enlarge {
     margin-top: 1rem;
     width: 80%;
-    padding: 2rem;
-    font-size: 1.2em;
+    font-size: 120%;
 }

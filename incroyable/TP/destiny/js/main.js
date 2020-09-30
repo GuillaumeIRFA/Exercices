@@ -1,4 +1,9 @@
-let cart = [];
+// cart is prefilled for testing purposes
+let cart = [
+    ["0", 5, "Beast Magic", "Weapon Ornament", "Exotic", true, "desc", "img/beast_magic.jpg", "Silver", 700, "Eververse"],
+    ["1", 7, "Between Breaths", "Weapon Ornament", "Exotic", true, "desc", "img/between_breaths.jpg", "Silver", 700, "Eververse"]
+];
+
 
 const articles = [
     ["Beast Magic", "Weapon Ornament", "Exotic", true, "desc", "img/beast_magic.jpg", "Silver", 700, "Eververse"],
@@ -32,6 +37,10 @@ $(window).scroll(function() {
 
         }
     });
+
+    if ($(window).scrollTop() + $(window).height() >= $(document).height() - 500) {
+        $(".articlesHidden").first().removeClass("articlesHidden");
+    }
 });
 
 
@@ -68,15 +77,50 @@ function updateCart(cart) {
     let total = 0;
 
     for (i = 0; i < cart.length; i++) {
-        cartContent += `<tr cartIndex=${i}><th class="p-0"><img src='${cart[i][7]}'></th><td>${cart[i][0]}</td><td>${cart[i][2]}</td><td>${cart[i][8]}</td><td>${cart[i][9]}</td><td>${cart[i][1]}</td><td>${cart[i][9]*cart[i][1]}</td><td><button class="btn btn-warning cartDeleteItem">X</button></td></tr>`;
+
+        let index = `<tr cartIndex=${i}>`;
+        let thumbnail = `<th class="p-0"><img src='${cart[i][7]}'></th>`;
+        let id = `<td>${cart[i][0]}</td>`;
+        let name = `<td>${cart[i][2]}</td>`;
+        let currency = `<td>${cart[i][8]}</td>`;
+        let value = `<td>${cart[i][9]}</td>`;
+        let quantity = `<td class="tdQuantity"><button class="btn cartMinus">-</button><input type="number" class="btn articleQuantity" value="${cart[i][1]}"><button class="btn cartPlus">+</button></td>`;
+        let subtotal = `<td>${cart[i][9]*cart[i][1]}</td>`;
+        let remove = `<td><button class="btn btn-warning cartDeleteItem">X</button></td></tr>`;
+
+        cartContent += index + thumbnail + id + name + currency + value + quantity + subtotal + remove;
+
         total += cart[i][9] * cart[i][1];
     }
+
     $("#cartItems").html(cartContent);
 
     $(".cartDeleteItem").click(function() {
         let index = parseInt($(this).parent().parent().attr("cartIndex"));
         cart.splice(index, 1);
         updateCart(cart);
+    });
+
+    $(".cartMinus").click(function() {
+
+        let newVal = eval($(this).siblings("input").val() + "-1");
+
+        if (newVal) {
+            let index = $(this).parent().parent().attr("cartIndex");
+            cart[index][1] = newVal;
+        }
+
+        updateCart(cart);
+
+    });
+
+    $(".cartPlus").click(function() {
+        let newVal = eval($(this).siblings("input").val() + "+1");
+
+        let index = $(this).parent().parent().attr("cartIndex");
+        cart[index][1] = newVal;
+        updateCart(cart);
+
     });
 
     $("#grandTotal").html(total);
@@ -92,14 +136,26 @@ $(".cartHide").click(function() {
     $(".cart").removeClass("cartActive");
 });
 
+$(".articleMinus").click(function() {
+    let newVal = eval($(this).siblings("input").val() + "-1");
+    if (newVal)
+        $(this).siblings("input").val(newVal);
+});
+
+$(".articlePlus").click(function() {
+    let newVal = eval($(this).siblings("input").val() + "+1");
+    $(this).siblings("input").val(newVal);
+});
+
 $(".articleAddToCart").click(function() {
-    let index = $(this).parent().parent().parent().parent().attr("articleId");
+
+    let id = $(this).parent().parent().parent().parent().attr("articleId");
     let quantity = parseInt($(this).siblings(".articleQuantity").val());
     let alreadyInCart = false;
     let atThisIndex;
 
     for (i = 0; i < cart.length; i++) {
-        if (cart[i].includes(index)) {
+        if (cart[i].includes(id)) {
             alreadyInCart = true;
             atThisIndex = i;
             break;
@@ -109,7 +165,8 @@ $(".articleAddToCart").click(function() {
     if (alreadyInCart) {
         cart[atThisIndex][1] += quantity;
     } else {
-        cart.push(Array(index, quantity).concat(articles[index]));
+        cart.push(Array(id, quantity).concat(articles[id]));
     }
+
     updateCart(cart);
 });
