@@ -516,6 +516,10 @@ tfoot tr th {
     padding: 0;
 }
 
+.undoHidden {
+    display: none;
+}
+
 
 /* tfoot tr td {
     text-align: center;

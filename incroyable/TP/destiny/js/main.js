@@ -4,6 +4,7 @@ let cart = [
     ["1", 7, "Between Breaths", "Weapon Ornament", "Exotic", true, "desc", "img/between_breaths.jpg", "Silver", 700, "Eververse"]
 ];
 
+let temp = [];
 
 const articles = [
     ["Beast Magic", "Weapon Ornament", "Exotic", true, "desc", "img/beast_magic.jpg", "Silver", 700, "Eververse"],
@@ -86,7 +87,7 @@ function updateCart(cart) {
         let value = `<td>${cart[i][9]}</td>`;
         let quantity = `<td class="tdQuantity"><button class="btn cartMinus">-</button><input type="number" class="btn articleQuantity" value="${cart[i][1]}"><button class="btn cartPlus">+</button></td>`;
         let subtotal = `<td>${cart[i][9]*cart[i][1]}</td>`;
-        let remove = `<td><button class="btn btn-warning cartDeleteItem">X</button></td></tr>`;
+        let remove = `<td><button class="btn btn-warning cartDeleteItem"><i class="fas fa-times"></i></button></td></tr>`;
 
         cartContent += index + thumbnail + id + name + currency + value + quantity + subtotal + remove;
 
@@ -97,7 +98,8 @@ function updateCart(cart) {
 
     $(".cartDeleteItem").click(function() {
         let index = parseInt($(this).parent().parent().attr("cartIndex"));
-        cart.splice(index, 1);
+        // temp.push(cart[index]);
+        temp.push(cart.splice(index, 1)[0]);
         updateCart(cart);
     });
 
@@ -124,6 +126,14 @@ function updateCart(cart) {
     });
 
     $("#grandTotal").html(total);
+
+    if (temp.length != 0) {
+        $('.undo').removeClass("undoHidden");
+    } else {
+        $('.undo').addClass("undoHidden");
+    }
+    console.log(temp);
+    console.log(cart);
 }
 
 updateCart(cart);
@@ -168,5 +178,10 @@ $(".articleAddToCart").click(function() {
         cart.push(Array(id, quantity).concat(articles[id]));
     }
 
+    updateCart(cart);
+});
+
+$('.undo').click(function() {
+    cart.push(temp.pop());
     updateCart(cart);
 });
