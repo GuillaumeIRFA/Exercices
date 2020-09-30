@@ -132,8 +132,6 @@ function updateCart(cart) {
     } else {
         $('.undo').addClass("undoHidden");
     }
-    console.log(temp);
-    console.log(cart);
 }
 
 updateCart(cart);
