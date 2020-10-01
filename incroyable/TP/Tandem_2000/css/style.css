@@ -1,0 +1,151 @@
+.header {
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerText {
+    text-align: center;
+    color: white;
+    margin-top: 80px;
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+.searchInput {
+    padding: 10px;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.596);
+}
+
+a.validate {
+    background-color: #388d4bd0;
+    color: white !important;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/**/
+
+.contentHeader {
+    padding: 15px;
+}
+
+.contentHeader p {
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.contentHeader p span {
+    font-weight: bold;
+}
+
+.priceOptions {
+    width: 200px;
+}
+
+
+/**/
+
+.itemsGroupHidden {
+    display: none;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    padding: 100px 0px;
+}
+
+.item>div {
+    /* flex: 1 0 50%; */
+}
+
+.itemImageContainer {
+    flex: 1 0 30%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 30%; */
+}
+
+.itemImageContainer img {
+    height: 200px;
+    width: auto;
+    /* object-fit: contain; */
+}
+
+.itemImageHidden {
+    display: none;
+}
+
+.arrowLeft {
+    font-size: 2em;
+    position: absolute;
+    top: calc(50% - 16.5px);
+    left: -12px;
+}
+
+.arrowRight {
+    font-size: 2em;
+    position: absolute;
+    top: calc(50% - 16.5px);
+    right: -12px;
+}
+
+.itemContentContainer {
+    flex: 1 0 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+.reserver {
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.reserverSecondary {
+    display: none;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+.footer div {
+    flex: 1;
+    padding: 15px;
+}
+
+.agence {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.agence img {
+    height: 120px;
+    width: auto;
+}
+
+.footerText {
+    font-weight: bold;
+    margin: 0;
+}

@@ -59,7 +59,7 @@ function remplirLeTroisiemeTableau(tab) {
     document.getElementById("table1").innerHTML = "";
 
     for (var i = 0; i < tab.length; i++) {
-        document.getElementById("table1").innerHTML += "<tr><td>" + tab[i][0] + "</td><td>" + tab[i][1] + "</td><td>" + tab[i][2] + "</td><td><button class='btn btn-danger delete'>DELETE</button></td></tr>";
+        document.getElementById("table1").innerHTML += "<tr><td>" + tab[i][0] + "</td><td>" + tab[i][1] + "</td><td>" + tab[i][2] + "</td><td><button class='btn btn-danger delete'>DELETE</button></td><td><button class='btn btn-warning update' data-index='" + i + "'>UPDATE</button></td></tr>";
     }
 
 
@@ -71,7 +71,6 @@ function remplirLeTroisiemeTableau(tab) {
         });
 
         for (i = 0; i < tab.length; i++) {
-            console.log(htmlContent[0], tab[i][0]);
             if (htmlContent[0] == tab[i][0] &&
                 htmlContent[1] == tab[i][1] &&
                 htmlContent[2] == tab[i][2]) {
@@ -81,8 +80,40 @@ function remplirLeTroisiemeTableau(tab) {
         }
 
         remplirLeTroisiemeTableau(tab);
-        // $(this).parent().parent().remove();
 
+    });
+
+    $(".update").click(function() {
+        let temp = $(this).parent().parent().html();
+        let index = $(this).data("index");
+        let mySiblings = $(this).parent().siblings();
+
+        for (i = 0; i < 3; i++) {
+            $(mySiblings[i]).html(`<input type="text" value="${tab[index][i]}">`);
+        }
+
+        // $(this).toggleClass("update save btn-warning btn-success").html("SAVE");
+        $(this).parent().prev().html(`<button class="btn btn-danger cancel" data-index="${index}">CANCEL</button>`);
+        $(this).replaceWith(`<button class="btn btn-success save" data-index="${index}">SAVE</button>`);
+
+
+        $(".save").click(function() {
+            let indexSave = $(this).data("index");
+
+            let newName = $(this).parent().parent().children().first().children().val();
+            let newAge = $(this).parent().parent().children().first().next().children().val();
+            let newJob = $(this).parent().parent().children().first().next().next().children().val();
+
+            tab[indexSave] = [newName, newAge, newJob];
+
+            remplirLeTroisiemeTableau(tab);
+
+        });
+
+
+        $(".cancel").click(function() {
+            remplirLeTroisiemeTableau(tab);
+        });
     });
 
 }
