@@ -12,6 +12,15 @@
     .reserverSecondary {
         margin: 5px;
     }
+    .itemImageContainer {
+        width: 50%;
+    }
+    .arrowLeft {
+        left: -100px;
+    }
+    .arrowRight {
+        right: -100px;
+    }
 }
 
 
@@ -31,9 +40,6 @@
     .item {
         padding: 0;
     }
-    .itemImageContainer {
-        flex: 1 0 50%;
-    }
     .itemContentContainer {
         display: none;
     }
@@ -47,7 +53,11 @@
 
 /* MEDIUM ONLY */
 
-@media screen and (min-width: 768px) and (max-width: 991px) {}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .itemImageContainer {
+        flex: 1 0 50%;
+    }
+}
 
 
 /* MEDIUM AND UP */
@@ -67,7 +77,12 @@
 
 /* LARGE AND UP */
 
-@media screen and (min-width: 992px) {}
+@media screen and (min-width: 992px) {
+    .itemImageContainer {
+        flex: 1 0 30%;
+        margin-left: 100px;
+    }
+}
 
 
 /* X-LARGE ONLY */
