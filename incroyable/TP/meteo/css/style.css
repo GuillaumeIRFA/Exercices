@@ -1,0 +1,142 @@
+.mainContainer {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.panel {
+    position: relative;
+    flex: 1;
+    border: 1px solid #888888;
+    transition: 1.5s;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+}
+
+.panel:not(:first-of-type) {
+    margin-left: -1px;
+}
+
+.panel.active {
+    flex: 3;
+}
+
+.panel h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 500px;
+    transition: 1s;
+    color: white;
+    text-shadow: 2px 2px solid black;
+}
+
+.panel.active h1 {
+    font-size: 4em;
+    margin: 0;
+}
+
+.weatherTable {
+    color: dimgray;
+    opacity: 0%;
+    transition: 1s;
+    text-align: center;
+    background-color: #ffffffec;
+    width: 100%;
+}
+
+.active .weatherTable {
+    opacity: 100%;
+}
+
+.weatherContent th,
+.weatherContent td {
+    width: 50%;
+    vertical-align: middle !important;
+    padding: 12px 30px;
+}
+
+.weatherContent th {
+    text-align: right;
+}
+
+.weatherContent td {
+    text-align: left;
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    z-index: 100;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.avatarTown {
+    opacity: 100%;
+    transition: 1s;
+}
+
+.avatarWeather {
+    opacity: 0%;
+    transition: 1s;
+}
+
+.active .avatarWeather {
+    opacity: 100%;
+}
+
+.active .avatarTown {
+    opacity: 0%;
+}
+
+#paris {
+    background-image: url("../img/paris.webp");
+}
+
+#paris .avatarTown {
+    background-image: url("../img/paris.webp");
+}
+
+#tokyo {
+    background-image: url("../img/tokyo.jpg");
+}
+
+#tokyo .avatarTown {
+    background-image: url("../img/tokyo.jpg");
+}
+
+#moscou {
+    background-image: url("../img/moscow.png");
+}
+
+#moscou .avatarTown {
+    background-image: url("../img/moscow.png");
+}
+
+#buenos-aires {
+    background-image: url("../img/buenos-aires.webp");
+}
+
+#buenos-aires .avatarTown {
+    background-image: url("../img/buenos-aires.webp");
+}
+
+#mulhouse {
+    background-image: url("../img/mulhouse.jpg");
+}
+
+#mulhouse .avatarTown {
+    background-image: url("../img/mulhouse.jpg");
+}
