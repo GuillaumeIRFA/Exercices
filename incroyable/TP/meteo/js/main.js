@@ -18,7 +18,6 @@ function requestWeatherData(town, key, lang, units) {
     $.ajax({
 
         url: `https://api.openweathermap.org/data/2.5/weather?q=${town[1]}&appid=${key}&lang=${lang}&units=${units}`,
-
         type: "GET",
 
         success: function(data) {
@@ -34,6 +33,7 @@ function requestWeatherData(town, key, lang, units) {
             $(`#${town[0]}`).find(".weatherContent").children("tr:eq(1)").append(temp);
             $(`#${town[0]}`).find(".weatherContent").children("tr:eq(2)").append(range);
             $(`#${town[0]}`).find(".weatherContent").children("tr:eq(3)").append(humidity);
+
         },
 
         error: function(error) {
@@ -45,11 +45,8 @@ function requestWeatherData(town, key, lang, units) {
 }
 
 function requestAllWeatherData(town, key, lang, metric) {
-
     for (let i = 0; i < town.length; i++) {
-
         requestWeatherData(town[i], key, lang, metric);
-
     }
 }
 
