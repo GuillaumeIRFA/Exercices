@@ -108,18 +108,14 @@ foreach ($mesTrucs as $key => $value) {
     <div class="container">
         <div class="row">
 
-            <?php
-            foreach ($mesTrucs as $key => $value) {
-            ?>
+            <?php foreach ($mesTrucs as $key => $value) { ?>
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title"><?= $key ?></h5>
                         <p class="card-text"><?= $value ?></p>
                     </div>
                 </div>
-            <?php
-            }
-            ?>
+            <?php } ?>
 
         </div>
     </div>

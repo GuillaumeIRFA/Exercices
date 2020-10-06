@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(40, 43, 46);
+    color: white;
+}
+
+.navbar {
+    background-color: rgb(40, 43, 46);
+    border-bottom: 1px solid gray !important;
+}
+
+.btn {
+    color: white;
+}
+
+.card {
+    border-color: gray;
+    background-color: rgb(40, 43, 46);
+}
+
+.bg-ghostblue {
+    background-color: rgb(50, 53, 56);
+}
+
+.best-value {
+    background-color: rgb(70, 73, 76);
+    color: white;
+}
