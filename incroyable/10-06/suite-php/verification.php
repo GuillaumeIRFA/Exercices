@@ -11,17 +11,22 @@ $membres = array(
     'jee' => 'splif'
 );
 
-if (isset($_GET["utilisateur"]) && isset($_GET["motDePasse"]) && isset($membres[$_GET["utilisateur"]])) {
 
+if (isset($_GET["utilisateur"]) && isset($_GET["motDePasse"]) && isset($membres[$_GET["utilisateur"]]) && $membres[$_GET["utilisateur"]] == $_GET["motDePasse"]) {
+    
     $currentUser = [$_GET["utilisateur"], $_GET["motDePasse"]];
     $trustableUser = true;
-    
+
 }
 
-$defaultContent = 
-    "<div class='defaultCard'>
-        <p class='defaultCard-text'>Pour voir du contenu, connectez vous.</p>
-    </div>";
+$defaultContent = "<div class='defaultCard'><p class='defaultCard-text'>Pour voir du contenu, connectez vous.</p></div>";
+
+
+function loadContent($quantity, $currentUser) {
+    for ($i = 0; $i < $quantity; $i++) {
+        include("card-template.php");
+    }
+}
 
 ?>
 
@@ -63,9 +68,10 @@ $defaultContent =
             <?php
 
             if ($trustableUser) {
-                for ($i = 0; $i < 6; $i++) {
-                    include("card-template.php");
-                }
+                loadContent(6, $currentUser);
+                // for ($i = 0; $i < 6; $i++) {
+                //     include("card-template.php");
+                // }
             } else { 
                 echo $defaultContent;
             }
