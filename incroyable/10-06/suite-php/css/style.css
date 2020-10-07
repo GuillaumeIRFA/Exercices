@@ -1,3 +1,39 @@
-body {
-    padding: 50px;
+.customNav {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 100px;
+}
+
+form {
+    display: flex;
+}
+
+form>* {
+    margin: 5px;
+}
+
+.defaultCard {
+    border: 1px solid lightgray;
+    border-radius: 30px;
+    padding: 100px 300px;
+}
+
+.defaultCard-Text {
+    width: 130px;
+    text-align: center;
+}
+
+.logo {
+    background-image: url("../img/fromage.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 100px;
+}
+
+.customRow {
+    justify-content: center;
+    align-items: center;
 }
