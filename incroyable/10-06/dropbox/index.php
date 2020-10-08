@@ -7,8 +7,8 @@ if (isset($_GET['darkTheme']) && $_GET['darkTheme'] == "true") {
 }
 
 $darkThemeCss = "<link rel='stylesheet' href='css/darkTheme.css'>";
-$darkThemeTogglerLight = "<a href='http://localhost:8090/Exercices/incroyable/10-06/dropbox/' class='btn btn-outline-primary my-sm-0 nav-button mr-2 dark-theme'>Light</a>";
-$darkThemeTogglerDark = "<a href='http://localhost:8090/Exercices/incroyable/10-06/dropbox/?darkTheme=true' class='btn btn-outline-primary my-sm-0 nav-button mr-2 dark-theme'>Dark</a>";
+$darkThemeTogglerLight = "<a href='index.php' class='btn btn-outline-primary my-sm-0 nav-button mr-2 dark-theme'>Light</a>";
+$darkThemeTogglerDark = "<a href='index.php?darkTheme=true' class='btn btn-outline-primary my-sm-0 nav-button mr-2 dark-theme'>Dark</a>";
 
 ?>
 
