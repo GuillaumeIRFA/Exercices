@@ -49,11 +49,6 @@ if ($email && $message) {
             echo "Failure";
         }
 
-    // if (mail($destinataire, $sujet, $message, $headers)) {
-    //     $warning = "Votre message a correctement été envoyé.<br><br>";
-    // } else {
-    //     $warning = "Échec de l'envoi du message.<br><br>";
-    // }
 }
 
 

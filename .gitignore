@@ -2,3 +2,7 @@ incroyable/TP/form/vendor
 incroyable/TP/form/credentials.php
 incroyable/TP/form/composer.json
 incroyable/TP/form/composer.lock
+incroyable/TP/upload_file/vendor
+incroyable/TP/upload_file/credentials.php
+incroyable/TP/upload_file/composer.json
+incroyable/TP/upload_file/composer.lock
