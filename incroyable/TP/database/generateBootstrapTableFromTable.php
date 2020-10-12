@@ -39,11 +39,13 @@ function generateBootstrapTableFromTable($connection, $table, array $fields = nu
     // generate the Header of the table
     if ($result = mysqli_query($connection, "SELECT * FROM $table")) {
     
+        $headerFields = [];
         $headerline = mysqli_fetch_array($result);
         $keys = array_keys($headerline);
 
         for($i = 1; $i < count($keys); $i+=2) {
             $tableHead .= "<th scope='col'>$keys[$i]</th>";
+            $headerFields[] = $keys[$i];
         }
 
     } else {
@@ -55,8 +57,11 @@ function generateBootstrapTableFromTable($connection, $table, array $fields = nu
     if ($result = mysqli_query($connection, $query)) {
     
         while ($line = mysqli_fetch_array($result)) {
-
-            $tableBody .= "<tr><td>".$line['id']."</td><td>".$line['nom']."</td><td>".$line['animal']."</td><td>".$line['couleur']."</td><td>".$line['plat']."</td></tr>";
+            $tableBody .= "<tr>";
+            for($i = 0; $i < count($headerFields); $i++){
+                $tableBody .= "<td>".$line[$headerFields[$i]]."</td>";
+            }
+            $tableBody .= "</tr>";
         }
 
     } else {

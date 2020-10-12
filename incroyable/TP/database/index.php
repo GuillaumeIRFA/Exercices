@@ -12,7 +12,7 @@ $table = 'maTable';
 
 $connection = mysqli_connect($host, $user, $password, $dababase);
 
-if (isset($_GET['animal']) && $_GET['animal'] != '') {
+if (isset($_GET['animal']) || isset($_GET['couleur']) || isset($_GET['plat'])) {
     $argumentArray = $_GET;
     $bootstrapTable = generateBootstrapTableFromTable($connection, $table, $argumentArray);
 } else {
