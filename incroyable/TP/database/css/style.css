@@ -1,0 +1,18 @@
+.customNav {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+}
+
+.search-form {
+    display: flex;
+}
+
+.search-form>* {
+    margin: 5px;
+}
+
+th {
+    text-transform: capitalize;
+}
