@@ -1,0 +1,51 @@
+.customNav {
+    display: flex;
+    justify-content: center;
+    border: 1px solid lightgray;
+    width: 100%;
+}
+
+.customForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.customForm>* {
+    margin: 5px;
+}
+
+form {
+    margin-block-end: 0;
+}
+
+th {
+    text-transform: capitalize;
+}
+
+label {
+    text-transform: capitalize;
+}
+
+.table {
+    margin: 0;
+}
+
+.bought {
+    background-color: lightgreen;
+}
+
+.btn {
+    width: 120px;
+}
+
+.champ-ajout {
+    padding: 25px;
+    width: 300px;
+    height: auto;
+}
+
+.bouton-ajout {
+    padding: 25px;
+    width: auto;
+}
