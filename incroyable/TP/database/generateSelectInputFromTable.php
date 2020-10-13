@@ -3,33 +3,32 @@
 function generateSelectInputFromTable($connection, $table, $field_name) {
 
     $selectInputPrefix = 
-    "<div class='form-group'>
-        <select class='form-control' name='$field_name'>
+    "<select class='form-control' name='addUser-$field_name'>
         <option selected disabled hidden>-- $field_name --</option>"
     ;
 
     $selectInputOptions = "";    
     
     $selectInputSuffix = 
-        "</select>
-    </div>"
+        "</select>"
     ;
     
-    $query = "SELECT $field_name FROM $table";
+    $query = "SELECT DISTINCT $field_name FROM $table";
 
-    $temp = [];
+    // $temp = [];
     
     if ($result = mysqli_query($connection, $query)) {
     
         while ($line = mysqli_fetch_array($result)) {
-            $temp[] = $line[$field_name];
+            $line[$field_name] != '' ? $selectInputOptions .= "<option>".$line[$field_name]."</option>" : null;
+            // $temp[] = $line[$field_name];
         }
 
         // Prevents duplicates
-        $temp = array_unique($temp);
-        foreach($temp as $element) {
-            $selectInputOptions .= "<option>".$element."</option>";
-        }
+        // $temp = array_unique($temp);
+        // foreach($temp as $element) {
+        //     $selectInputOptions .= "<option>".$element."</option>";
+        // }
 
     } else { 
         return false; 

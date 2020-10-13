@@ -2,6 +2,8 @@
 
 require_once "generateBootstrapTableFromTable.php";
 require_once "generateSelectInputFromTable.php";
+require_once "deleteEntryInTable.php";
+require_once "insertEntryInTable.php";
 
 
 $host = 'localhost';
@@ -11,6 +13,21 @@ $dababase = 'maBase';
 $table = 'maTable';
 
 $connection = mysqli_connect($host, $user, $password, $dababase);
+
+if (isset($_POST['deleteEntry'])) {
+    deleteEntryInTable($connection, $table, $_POST['deleteEntry']);
+}
+
+if (
+    isset($_POST['addUser-nom']) && $_POST['addUser-nom'] != '' &&
+    isset($_POST['addUser-animal']) && $_POST['addUser-animal'] != '' &&
+    isset($_POST['addUser-couleur']) && $_POST['addUser-couleur'] != '' &&
+    isset($_POST['addUser-plat']) && $_POST['addUser-plat'] != ''
+) {
+
+    $entryData = [$_POST['addUser-nom'], $_POST['addUser-animal'], $_POST['addUser-couleur'], $_POST['addUser-plat']];
+    insertEntryInTable($connection, $table, $entryData);
+}
 
 if (isset($_GET['animal']) || isset($_GET['couleur']) || isset($_GET['plat'])) {
     $argumentArray = $_GET;
@@ -42,7 +59,7 @@ $selectInputPlat = generateSelectInputFromTable($connection, $table, 'plat');
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light customNav">
 
-        <form class="search-form">
+        <form class="customForm">
             <?= $selectInputAnimal ?>
             <?= $selectInputCouleur ?>
             <?= $selectInputPlat ?>
@@ -53,6 +70,36 @@ $selectInputPlat = generateSelectInputFromTable($connection, $table, 'plat');
     </nav>
 
     <?= $bootstrapTable ?>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light customNav">
+        <form method="POST" class="customForm">
+            <div class='form-group'>
+                <label for='addUser-nom'>nom</label>
+                <input type='text' name='addUser-nom' class='form-control' placeholder='nom :'>
+            </div>
+            <!-- <div class='form-group'>
+                <label for='addUser-animal'>animal</label>
+                <input type='text' name='addUser-animal' class='form-control' placeholder='animal :'>
+            </div> -->
+            <div class='form-group'>
+                <label for='addUser-animal'>animal</label>
+                <?= $selectInputAnimal ?>
+            </div>
+            <div class='form-group'>
+                <label for='addUser-couleur'>couleur</label>
+                <input type='text' name='addUser-couleur' class='form-control' placeholder='couleur :'>
+            </div>
+            <div class='form-group'>
+                <label for='addUser-plat'>plat</label>
+                <input type='text' name='addUser-plat' class='form-control' placeholder='plat :'>
+            </div>
+            <div class='form-group'>
+                <button type='input' class='btn btn-success'>Ajouter</button>
+            </div>
+        </form>
+    </nav>
+
+
 
 
 

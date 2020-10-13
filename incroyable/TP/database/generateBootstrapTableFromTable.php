@@ -61,7 +61,7 @@ function generateBootstrapTableFromTable($connection, $table, array $fields = nu
             for($i = 0; $i < count($headerFields); $i++){
                 $tableBody .= "<td>".$line[$headerFields[$i]]."</td>";
             }
-            $tableBody .= "</tr>";
+            $tableBody .= "<td><form method='POST'><button type='submit' class='btn btn-danger' name='deleteEntry' value='$line[0]'>Supprimer</button></form></td></tr>";
         }
 
     } else {
@@ -69,8 +69,8 @@ function generateBootstrapTableFromTable($connection, $table, array $fields = nu
         return false;
     }
 
-    $table = $tablePrefix.$tableHead.$tableMiddleFix.$tableBody.$tableSuffix;
-    return $table;
+    $bootstrapTable = $tablePrefix.$tableHead.$tableMiddleFix.$tableBody.$tableSuffix;
+    return $bootstrapTable;
 }
 
 ?>

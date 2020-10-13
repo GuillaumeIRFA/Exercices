@@ -1,18 +1,36 @@
 .customNav {
     display: flex;
-    justify-content: flex-end;
-    border-bottom: 1px solid lightgray;
+    justify-content: center;
+    border: 1px solid lightgray;
     width: 100%;
 }
 
-.search-form {
+.customForm {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.search-form>* {
+.customForm>* {
     margin: 5px;
+}
+
+form {
+    margin-block-end: 0;
 }
 
 th {
     text-transform: capitalize;
+}
+
+.form-group {
+    text-align: center;
+}
+
+label {
+    text-transform: capitalize;
+}
+
+.table {
+    margin: 0;
 }
