@@ -12,7 +12,7 @@ function generateBootstrapTableFromTable($connection, $table, array $fields = nu
         echo $query;
         
     } else {
-        $query = "SELECT * FROM $table";
+        $query = "SELECT * FROM $table WHERE id_utilisateur = $_SESSION[ID]";
     }
 
     $tablePrefix = 
@@ -21,7 +21,10 @@ function generateBootstrapTableFromTable($connection, $table, array $fields = nu
             <tr>"
     ;
 
-    $tableHead = "<th scope='col'>Nom</th>"."<th scope='col'>Acheté</th>"."<th scope='col'>Supprimer</th>";
+    $tableHead = "<th scope='col'>Nom</th>".
+    // "<th scope='col'>Modifier</th>".
+    "<th scope='col'>Acheté</th>".
+    "<th scope='col'>Supprimer</th>";
 
     $tableMiddleFix =
             "</tr>
@@ -40,10 +43,12 @@ function generateBootstrapTableFromTable($connection, $table, array $fields = nu
     if ($result = mysqli_query($connection, $query)) {
     
         while ($line = mysqli_fetch_array($result)) {
+            $tableBody .= "<form method='POST' id='form_$line[0]'></form>";
             $tableBody .= $line['acheté'] === "0" ? "<tr>" : "<tr class='bought'>";
-            $tableBody .= "<td>".$line['nom']."</td>";
-            $tableBody .= "<td><form method='POST'><button type='submit' class='btn btn-".($line['acheté'] === '0' ? "warning" : "success")."' name='toggleEntry' value='$line[0]'>".($line['acheté'] === '0' ? "Non" : "Oui")."</button></form></td>";
-            $tableBody .= "<td><form method='POST'><button type='submit' class='btn btn-danger' name='deleteEntry' value='$line[0]'>Supprimer</button></form></td></tr>";
+            $tableBody .= "<td class='clickable' data-id=$line[0]><div class='innerTD'>".$line['nom']."</div></td>";
+            // $tableBody .= "<td><button type='button' class='btn btn-warning modifier' data-id='$line[0]'>Modifier</button></td>";
+            $tableBody .= "<td class='w20'><button type='submit' form='form_$line[0]' class='btn btn-".($line['acheté'] === '0' ? "warning" : "success")."' name='toggleEntry' value='$line[0]'>".($line['acheté'] === '0' ? "Non" : "Oui")."</button></td>";
+            $tableBody .= "<td class='w20'><button type='submit' form='form_$line[0]' class='btn btn-danger' name='deleteEntry' value='$line[0]'>Supprimer</button></td></tr>";
         }
 
     } else {
