@@ -7,9 +7,9 @@ function updateEntryInTable($connection, $table, array $entry) {
         $query = "UPDATE `$table` SET `nom` = '$entry[1]' WHERE `$table`.`id` = '$entry[0]'";
 
         if(mysqli_query($connection, $query)) {
-            echo $query . "<br>Query Success<br>";
+            // echo $query . "<br>Query Success<br>";
         } else {
-            echo $query . "<br>Query Failure<br>";
+            // echo $query . "<br>Query Failure<br>";
         }
 
     } else {
@@ -21,13 +21,13 @@ function updateEntryInTable($connection, $table, array $entry) {
             $query = "UPDATE `$table` SET `acheté` = ".($response['acheté'] === '0' ? '1' : '0')." WHERE `$table`.`id` = '$entry[0]'";
 
             if(mysqli_query($connection, $query)) {
-                echo $query . "<br>Query Success<br>";
+                // echo $query . "<br>Query Success<br>";
             } else {
-                echo $query . "<br>Query Failure<br>";
+                // echo $query . "<br>Query Failure<br>";
             }
 
         } else {
-            echo $query . "<br>Query Failure<br>";
+            // echo $query . "<br>Query Failure<br>";
         }
 
     }

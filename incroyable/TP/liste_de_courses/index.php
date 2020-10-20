@@ -2,21 +2,7 @@
 
 session_start();
 
-foreach ($_POST as $key => $value) {
-    echo "POST $key => $value<br>";
-}
-
-foreach ($_SESSION as $key => $value) {
-    echo "SESSION $key => $value<br>";
-}
-
-$host = 'localhost';
-$user = 'prom';
-$password = 'xd';
-$dababase = 'liste_de_courses';
-
-$connection = mysqli_connect($host, $user, $password, $dababase);
-
+require_once "authentication.php";
 require_once "generateBootstrapTableFromTable.php";
 require_once "generateSelectInputFromTable.php";
 require_once "deleteEntryInTable.php";
@@ -36,9 +22,9 @@ if (isset($_POST['deleteEntry'])) {
     deleteEntryInTable($connection, 'articles', $_POST['deleteEntry']);
 }
 
-if (isset($_POST['toggleEntry'])) {
-    updateEntryInTable($connection, 'articles', [$_POST['toggleEntry']]);
-}
+// if (isset($_POST['toggleEntry'])) {
+//     updateEntryInTable($connection, 'articles', [$_POST['toggleEntry']]);
+// }
 
 if (isset($_POST['updateEntry'])) {
     updateEntryInTable($connection, 'articles', [$_POST['updateEntry'], $_POST['nom']]);
@@ -53,7 +39,7 @@ if (isset($_SESSION['ID'])) {
     $bootstrapTable = generateBootstrapTableFromTable($connection, 'articles');
 }
 
-$loginContainer = '';
+// $loginContainer = '';
 
 ?>
 
@@ -98,27 +84,20 @@ $loginContainer = '';
             </nav>
             ";
         }
-    }
 
+    }
 
     ?>
 
+    <div class="testContainer">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
 </html>
-
-<?php
-
-foreach ($_POST as $key => $value) {
-    echo "POST $key => $value<br>";
-}
-
-foreach ($_SESSION as $key => $value) {
-    echo "SESSION $key => $value<br>";
-}
-?>

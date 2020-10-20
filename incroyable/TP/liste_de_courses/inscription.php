@@ -18,8 +18,12 @@ if (isset($_POST['newUserUsername']) && isset($_POST['newUserPassword']) && isse
 
                     $inscriptionFormWarning = "This username is already taken, please choose another.";
                 } else {
+                    $mdpmd5 = md5($newUserPassword);
+                    if (mysqli_query($connection, "INSERT INTO utilisateurs (nom, mot_de_passe) VALUES ('$newUserUsername', '$mdpmd5')")) {
 
-                    if (mysqli_query($connection, "INSERT INTO utilisateurs (nom, mot_de_passe) VALUES ('$newUserUsername', '$newUserPassword')")) {
+                        $result = mysqli_fetch_array(mysqli_query($connection, "SELECT id, mot_de_passe FROM utilisateurs WHERE nom = '$newUserUsername'"));
+                        $megamd5 = md5($result['id']).$result['mot_de_passe'];
+                        mysqli_query($connection, "UPDATE utilisateurs SET mot_de_passe = '$megamd5' WHERE nom = '$newUserUsername'");
 
                         $inscriptionFormWarning = "Account succesfully created<br><a href='index.php'>Go back</a>";
                         unset($_SESSION['signUp']);
