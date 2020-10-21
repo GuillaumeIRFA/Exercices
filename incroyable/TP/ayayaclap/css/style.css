@@ -1,0 +1,30 @@
+body {
+    background-color: dimgrey;
+}
+
+.navbar * {
+    margin: 0;
+}
+
+.customNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid lightgray;
+    width: 100%;
+}
+
+.modal-dialog {
+    max-width: 100%;
+    margin-top: 0rem;
+}
+
+.modal-content {
+    border-radius: 0rem;
+    border: none;
+}
+
+.modal-content .buttons .btn {
+    margin: 0 0.5rem;
+}
