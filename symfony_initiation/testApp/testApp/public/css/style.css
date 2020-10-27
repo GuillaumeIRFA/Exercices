@@ -1,0 +1,10 @@
+.articles {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.centered {
+    width: fit-content;
+    margin: auto;
+}

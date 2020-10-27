@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ controller_name }}{% endblock %}
+
+{% block body %}
+<div class="articles">
+    {% for article in articles %}
+    <div class="article">
+        <a href="{{ path('blog_article', { 'id' : article.id }) }}">{{ article.title}}</a>    
+        <p>Crée le {{ article.createdAt|date("d/m/Y") }} à {{ article.createdAt|date("h:m") }}</p>
+        <img src="{{ article.image }}" alt="">
+        <p>{{ article.content }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

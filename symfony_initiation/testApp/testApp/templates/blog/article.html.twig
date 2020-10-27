@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ article.title }}
+{% endblock %}
+
+{% block body %}
+
+	<div class="article centered">
+		<h1>{{ article.title }}</h1>
+		<p>Crée le
+			{{ article.createdAt|date("d/m/Y") }}
+			à
+			{{ article.createdAt|date("h:m") }}</p>
+		<img src="{{ article.image }}" alt="">
+		<p>{{ article.content }}</p>
+	</div>
+
+	<div class="flex">
+		<div class="image"><img src="https://picsum.photos/350/200" alt=""></div>
+		<div class="image"><img src="https://picsum.photos/350/500" alt=""></div>
+	</div>
+56
+
+{% endblock %}
